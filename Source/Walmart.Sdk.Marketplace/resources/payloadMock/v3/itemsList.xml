@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:ItemResponses
+	xmlns:ns2="http://walmart.com/">
+  <ns2:ItemResponse>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>JBC420U91W-2930-B</ns2:sku>
+    <ns2:wpid>2NW2IB8X2T07</ns2:wpid>
+    <ns2:gtin>04713072778628</ns2:gtin>
+    <ns2:productName>Jetway JBC420U91 Slim NUC Fanless Barebone, Intel Celeron N2930 Quad-core SoC, Max. 8GB RAM, HDMI,Intel LAN, HD Audio, Serial Port, New Thin Version</ns2:productName>
+    <ns2:productType>Desktop Computers</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>199.99</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>UNPUBLISHED</ns2:publishedStatus>
+  </ns2:ItemResponse>
+  <ns2:ItemResponse>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>Prod-FGW-XXX</ns2:sku>
+    <ns2:wpid>1LE06SWCGMS7</ns2:wpid>
+    <ns2:gtin>04993811256253</ns2:gtin>
+    <ns2:productName>Hyperloop Prod-FGW-XXX - Test Item - Do Not Buy</ns2:productName>
+    <ns2:productType>Electric Motors</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>999999.99</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>UNPUBLISHED</ns2:publishedStatus>
+  </ns2:ItemResponse>
+  <ns2:ItemResponse>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>Prod-FGW-05112017</ns2:sku>
+    <ns2:wpid>33HI4DEHYOPT</ns2:wpid>
+    <ns2:gtin>04697793569546</ns2:gtin>
+    <ns2:productName>Test 'Instant Food and Beverage Thickener</ns2:productName>
+    <ns2:productType>default</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>17.84</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>UNPUBLISHED</ns2:publishedStatus>
+  </ns2:ItemResponse>
+  <ns2:ItemResponse>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>TESTTSHIRT001BVSUMIT</ns2:sku>
+    <ns2:wpid>2M4CDG3L46AW</ns2:wpid>
+    <ns2:upc>788542320397</ns2:upc>
+    <ns2:gtin>00788542320397</ns2:gtin>
+    <ns2:productName>Faded Glory Men's Striped V-Neck Tee Test</ns2:productName>
+    <ns2:productType>T-Shirts</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>30.00</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>SYSTEM_PROBLEM</ns2:publishedStatus>
+  </ns2:ItemResponse>
+  <ns2:ItemResponse>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>Prod-FGW-2</ns2:sku>
+    <ns2:wpid>60D9Z8WXTZBD</ns2:wpid>
+    <ns2:upc>000000000901</ns2:upc>
+    <ns2:gtin>00000000000901</ns2:gtin>
+    <ns2:productName>FGW Motor 2</ns2:productName>
+    <ns2:productType>Electric Motors</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>31.00</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>UNPUBLISHED</ns2:publishedStatus>
+  </ns2:ItemResponse>
+  <ns2:ItemResponse>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>BSG10X</ns2:sku>
+    <ns2:wpid>44JAFDC07MSH</ns2:wpid>
+    <ns2:upc>638448001480</ns2:upc>
+    <ns2:gtin>00638448001480</ns2:gtin>
+    <ns2:productName>Body-Solid Powerline Home Gym</ns2:productName>
+    <ns2:shelf>Sports &amp; Outdoors/Exercise &amp; Fitness/Exercise Machines/Home Gyms</ns2:shelf>
+    <ns2:productType>Home Gyms</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>865.00</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>STAGE</ns2:publishedStatus>
+  </ns2:ItemResponse>
+  <ns2:ItemResponse>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>B5R</ns2:sku>
+    <ns2:wpid>3S2BXV8IF1DE</ns2:wpid>
+    <ns2:upc>638448008106</ns2:upc>
+    <ns2:gtin>00638448008106</ns2:gtin>
+    <ns2:productName>Adjustable Recumbent Bike</ns2:productName>
+    <ns2:productType>Exercise Bikes</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>2099.00</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>UNPUBLISHED</ns2:publishedStatus>
+  </ns2:ItemResponse>
+  <ns2:ItemResponse>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>8082865</ns2:sku>
+    <ns2:wpid>3QZ8ATEAM3ZT</ns2:wpid>
+    <ns2:upc>711719100348</ns2:upc>
+    <ns2:gtin>00711719100348</ns2:gtin>
+    <ns2:productName>Playstation 4 Console (PS4)</ns2:productName>
+    <ns2:productType>Video Game Consoles</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>399.00</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>SYSTEM_PROBLEM</ns2:publishedStatus>
+  </ns2:ItemResponse>
+  <ns2:ItemResponse>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>UBLBT-HPG62B44-16H09</ns2:sku>
+    <ns2:wpid>1BK0IKL2KOS0</ns2:wpid>
+    <ns2:upc>715875436976</ns2:upc>
+    <ns2:gtin>00715875436976</ns2:gtin>
+    <ns2:productName>UBatteries Laptop Battery HP Compaq HSTNN-178C 586006-361 586028-341 - 6 Cell, 4400mAh</ns2:productName>
+    <ns2:productType>Device-Specific Electronics Batteries</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>27.95</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>STAGE</ns2:publishedStatus>
+  </ns2:ItemResponse>
+  <ns2:ItemResponse>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>UBLBT-HPG62B44-16H12</ns2:sku>
+    <ns2:wpid>7IDB43450FOI</ns2:wpid>
+    <ns2:upc>715875437485</ns2:upc>
+    <ns2:gtin>00715875437485</ns2:gtin>
+    <ns2:productName>UBatteries Laptop Battery HP Compaq HSTNN-OB0X HSTNN-IB1E HSTNN-IB2W - 6 Cell, 4400mAh</ns2:productName>
+    <ns2:productType>Device-Specific Electronics Batteries</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>27.95</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>STAGE</ns2:publishedStatus>
+  </ns2:ItemResponse>
+  <ns2:totalItems>10</ns2:totalItems>
+</ns2:ItemResponses>

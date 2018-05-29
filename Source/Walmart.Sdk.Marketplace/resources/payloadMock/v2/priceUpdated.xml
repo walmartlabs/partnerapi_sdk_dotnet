@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:ItemPriceResponse xmlns:ns0="http://walmart.com/">
+    <ns0:mart>WALMART_US</ns0:mart>
+    <ns0:sku>NJ-BV2-6</ns0:sku>
+    <ns0:currency>USD</ns0:currency>
+    <ns0:amount>12.0</ns0:amount>
+    <ns0:message>Thank you. Your price has been updated. Please allow up to five minutes for this change to be reflected on the site.</ns0:message>
+</ns0:ItemPriceResponse>

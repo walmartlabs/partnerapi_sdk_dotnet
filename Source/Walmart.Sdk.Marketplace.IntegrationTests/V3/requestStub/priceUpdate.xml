@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Price xmlns="http://walmart.com/">
+<itemIdentifier>
+  <sku>sku-656666666</sku>
+</itemIdentifier>
+<pricingList>
+  <pricing>
+    <currentPrice>
+      <value currency="USD" amount="4.00" />
+    </currentPrice>
+    <currentPriceType>REDUCED</currentPriceType>
+    <comparisonPrice>
+      <value currency="USD" amount="5.99" />
+    </comparisonPrice>
+  </pricing>
+</pricingList>
+</Price>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<LagTimeFeed xmlns="http://walmart.com/">
+  <LagTimeHeader>
+    <version>1.0</version>
+  </LagTimeHeader>
+  <lagTime>
+    <sku>{{sku}}</sku>
+    <fulfillmentLagTime>{{time}}</fulfillmentLagTime>
+  </lagTime>
+</LagTimeFeed>

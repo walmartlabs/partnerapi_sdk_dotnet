@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MPItemFeed xmlns="http://walmart.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://walmart.com/ MPItem.xsd ">
+
+  <MPItemFeedHeader>
+    <version>2.1</version>
+    <requestId>MinSpecElectronics</requestId>
+    <requestBatchId>MinSpecElectronics38</requestBatchId>
+  </MPItemFeedHeader>
+  <MPItem>
+    <sku>10972wsddrf</sku>
+    <Product>
+      <productName>QVS 1-Foot S-Video Male to 2 S-Video Female Y Cable (CSV2F)</productName>
+      <longDescription><![CDATA[<div class="productDescriptionWrapper"> QVS Premium S-Video Mini4 Male to Two Female Splitter Cable CSV2F A/V Device Cables <div class="emptyClear"></div></div>]]></longDescription>
+      <shelfDescription><![CDATA[QVS 1-Foot S-Video Male to 2 S-Video Female Y Cable (CSV2F)]]></shelfDescription>
+      <shortDescription>QVS 1-Foot S-Video Male to 2 S-Video Female Y Cable (CSV2F)</shortDescription>
+      <mainImage>
+        <mainImageUrl>http://images.antonline.com/img-main/500/037229400328.jpg</mainImageUrl>
+      </mainImage>
+      <productIdentifiers>
+        <productIdentifier>
+          <productIdType>UPC</productIdType>
+          <productId>920740173539</productId>
+        </productIdentifier>
+      </productIdentifiers>
+      <productTaxCode>2038710</productTaxCode>
+      <additionalProductAttributes>
+        <additionalProductAttribute>
+          <productAttributeName>sku_override</productAttributeName>
+          <productAttributeValue>true</productAttributeValue>
+        </additionalProductAttribute>
+      </additionalProductAttributes>
+      <Electronics>
+        <brand>QVS</brand>
+        <ElectronicsCables>
+        </ElectronicsCables>
+      </Electronics>
+    </Product>
+    <price>
+      <currency>USD</currency>
+      <amount>16.29</amount>
+    </price>
+    <shippingWeight>
+      <value>0.120</value>
+      <unit>LB</unit>
+    </shippingWeight>
+  </MPItem>
+</MPItemFeed>

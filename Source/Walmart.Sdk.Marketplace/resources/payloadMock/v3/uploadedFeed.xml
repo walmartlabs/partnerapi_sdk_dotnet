@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FeedAcknowledgement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://walmart.com/">
+  <feedId>A611BDBCCC7C46668F29883B5DE47462@AQMBAQA</feedId>
+  <additionalAttributes>
+    <type>LOCALIZABLE_TEXT</type>
+  </additionalAttributes>
+</FeedAcknowledgement>

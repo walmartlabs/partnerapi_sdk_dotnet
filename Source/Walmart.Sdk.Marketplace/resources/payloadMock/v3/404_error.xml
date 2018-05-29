@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:errors xmlns:ns2="http://walmart.com/">
+  <ns2:error>
+    <ns2:code>CONTENT_NOT_FOUND.GMP_DATA_STATUS_API</ns2:code>
+    <ns2:info>Requested content could not be found.</ns2:info>
+    <ns2:severity>INFO</ns2:severity>
+    <ns2:category>APPLICATION</ns2:category>
+    <ns2:causes/>
+    <ns2:errorIdentifiers/>
+  </ns2:error>
+</ns2:errors>

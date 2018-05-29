@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<PriceFeed xmlns:gmp="http://walmart.com/">
+  <PriceHeader>
+    <version>1.5</version>
+  </PriceHeader>
+  <Price>
+    <itemIdentifier>
+      <sku>sku-656666666</sku>
+    </itemIdentifier>
+    <pricingList>
+      <pricing>
+        <currentPrice>
+          <value currency="USD" amount="4.00"/>
+        </currentPrice>
+      </pricing>
+    </pricingList>
+  </Price>
+  <Price>
+    <itemIdentifier>
+      <sku>sku-656666667</sku>
+    </itemIdentifier>
+    <pricingList>
+      <pricing>
+        <currentPrice>
+          <value currency="USD" amount="4.00"/>
+        </currentPrice>
+      </pricing>
+    </pricingList>
+  </Price>
+</PriceFeed>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Schema for data exchanged between Walmart and its partners.
+  Copyright 2015 Walmart Corporation. All rights reserved.
+-->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://walmart.com/"
+  targetNamespace="http://walmart.com/"
+  elementFormDefault="qualified"
+  version="1.4">
+
+  <xsd:include schemaLocation="InventoryHeader.xsd" />
+  <xsd:include schemaLocation="Inventory.xsd" />
+
+  <xsd:element name="InventoryFeed">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="InventoryHeader" type="InventoryHeader">
+          <xsd:annotation>
+            <xsd:documentation>
+             Inventory Feed header
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:choice minOccurs="1" maxOccurs="100000">
+          <xsd:element name="inventory" type="inventory"/>
+        </xsd:choice>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  
+  
+
+</xsd:schema>

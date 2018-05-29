@@ -1,0 +1,81 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="V2\requestStub\cancelOrderLines.xml" />
+    <None Remove="V2\requestStub\inventoryBulkUpdate.xml" />
+    <None Remove="V2\requestStub\inventoryUpdate.xml" />
+    <None Remove="V2\requestStub\itemFeed.xml" />
+    <None Remove="V2\requestStub\priceBulkUpdate.xml" />
+    <None Remove="V2\requestStub\refundOrderLines.xml" />
+    <None Remove="V2\requestStub\shippingUpdates.xml" />
+    <None Remove="V2\requestStub\promotionFeed.xml" />
+    <None Remove="V2\requestStub\updateLagTime.xml" />
+    <None Remove="V3\requestStub\itemFeed.xml" />
+    <None Remove="V3\requestStub\priceBulkUpdate.xml" />
+    <None Remove="V3\requestStub\priceUpdate.xml" />
+    <None Remove="V3\requestStub\promotionFeed.xml" />
+    <None Remove="V3\requestStub\updatePromotion.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.0-preview-20180109-01" />
+    <PackageReference Include="Moq" Version="4.8.2" />
+    <PackageReference Include="xunit" Version="2.3.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+    <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
+    <PackageReference Include="coverlet.msbuild" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="V2\requestStub\cancelOrderLines.xml" />
+    <EmbeddedResource Include="V2\requestStub\priceBulkUpdate.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="V2\requestStub\refundOrderLines.xml" />
+    <EmbeddedResource Include="V2\requestStub\shippingUpdates.xml" />
+    <EmbeddedResource Include="V2\requestStub\updateLagTime.xml" />
+    <EmbeddedResource Include="V3\requestStub\cancelOrderLines.xml" />
+    <EmbeddedResource Include="V2\requestStub\inventoryBulkUpdate.xml" />
+    <EmbeddedResource Include="V2\requestStub\itemFeed.xml" />
+    <EmbeddedResource Include="V2\requestStub\inventoryUpdate.xml" />
+    <EmbeddedResource Include="V3\requestStub\priceBulkUpdate.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="V3\requestStub\priceUpdate.xml" />
+    <EmbeddedResource Include="V3\requestStub\refundOrderLines.xml" />
+    <EmbeddedResource Include="V3\requestStub\shippingUpdates.xml" />
+    <EmbeddedResource Include="V2\requestStub\promotionFeed.xml" />
+    <EmbeddedResource Include="V3\requestStub\itemFeed.xml" />
+    <EmbeddedResource Include="V3\requestStub\promotionFeed.xml" />
+    <EmbeddedResource Include="V3\requestStub\updatePromotion.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Walmart.Sdk.Base\Walmart.Sdk.Base.csproj">
+      <Project>{e8673926-7367-4983-847d-6ac541ed538a}</Project>
+      <Name>Walmart.Sdk.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Walmart.Sdk.Marketplace\Walmart.Sdk.Marketplace.csproj">
+      <Project>{c72116be-8b1e-4c19-ba61-049df563fd95}</Project>
+      <Name>Walmart.Sdk.Marketplace</Name>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Http\Fetchers\LocalFetcherMocks\feedsList.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Http\Fetchers\LocalFetcherMocks\feedsList.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Http\Fetchers\LocalFetcherMocks\_mapping.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

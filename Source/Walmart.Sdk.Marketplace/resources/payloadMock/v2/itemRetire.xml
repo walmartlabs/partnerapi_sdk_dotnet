@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:ItemRetireResponse xmlns:ns2="http://walmart.com/">
+  <ns2:sku>WB-MP16</ns2:sku>
+  <ns2:message>Thank you.  Your item has been submitted for retirement from Walmart Catalog.  Please note that it can take up to 48 hours for items to be retired from our catalog.</ns2:message>
+</ns2:ItemRetireResponse>

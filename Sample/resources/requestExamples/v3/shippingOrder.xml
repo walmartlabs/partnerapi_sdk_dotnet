@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<orderShipment
+  xmlns:ns2="http://walmart.com/mp/v3/orders"
+  xmlns:ns3="http://walmart.com/">
+  <orderLines>
+    <orderLine>
+      <lineNumber>2</lineNumber>
+      <orderLineStatuses>
+        <orderLineStatus>
+          <status>Shipped</status>
+          <statusQuantity>
+            <unitOfMeasurement>Each</unitOfMeasurement>
+            <amount>1</amount>
+          </statusQuantity>
+          <trackingInfo>
+            <shipDateTime>2016-06-27T05:30:15.000Z</shipDateTime>
+            <carrierName>
+              <carrier>FedEx</carrier>
+            </carrierName>
+            <methodCode>Standard</methodCode>
+            <trackingNumber>12333634122</trackingNumber>
+            <trackingURL>http://www.fedex.com</trackingURL>
+          </trackingInfo>
+        </orderLineStatus>
+      </orderLineStatuses>
+    </orderLine>
+  </orderLines>
+</orderShipment>

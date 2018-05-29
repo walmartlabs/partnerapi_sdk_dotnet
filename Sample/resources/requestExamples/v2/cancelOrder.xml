@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ns2:orderCancellation
+  xmlns:ns2="http://walmart.com/mp/v2/orders"
+  xmlns:ns3="http://walmart.com/">
+  <ns2:orderLines>
+    <ns2:orderLine>
+      <ns2:lineNumber>1</ns2:lineNumber>
+      <ns2:orderLineStatuses>
+        <ns2:orderLineStatus>
+          <ns2:status>Cancelled</ns2:status>
+          <ns2:cancellationReason>CANCEL_BY_SELLER</ns2:cancellationReason>
+          <ns2:statusQuantity>
+            <ns2:unitOfMeasurement>EACH</ns2:unitOfMeasurement>
+            <ns2:amount>1</ns2:amount>
+          </ns2:statusQuantity>
+        </ns2:orderLineStatus>
+      </ns2:orderLineStatuses>
+    </ns2:orderLine>
+  </ns2:orderLines>
+</ns2:orderCancellation>

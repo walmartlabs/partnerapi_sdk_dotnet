@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Price xmlns="http://walmart.com/">
+  <itemIdentifier>
+    <sku>{{sku}}</sku>
+  </itemIdentifier>
+  <pricingList>
+    <pricing effectiveDate="{{date1}}" expirationDate="{{date2}}" processMode="{{mode}}">
+      <currentPrice>
+        <value amount="35.00"/>
+      </currentPrice>
+      <currentPriceType>{{type}}</currentPriceType>
+      <comparisonPrice>
+        <value amount="97.00"/>
+      </comparisonPrice>
+    </pricing>
+    <pricing effectiveDate="{{date3}}" expirationDate="{{date4}}" processMode="{{mode}}">
+      <currentPrice>
+        <value amount="44.00"/>
+      </currentPrice>
+    </pricing>
+  </pricingList>
+</Price>

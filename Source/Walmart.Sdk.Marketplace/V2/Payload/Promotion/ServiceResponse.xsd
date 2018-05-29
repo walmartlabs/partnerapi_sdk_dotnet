@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<!--
+  Schema for data exchanged between Walmart and its partners.
+  Copyright 2015 Walmart Corporation. All rights reserved.
+-->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+  version="1.0">
+
+  <xsd:element name="ServiceResponse" type="ServiceResponse"/>
+
+  <xsd:complexType name="ServiceResponse">
+    <xsd:sequence>
+      <xsd:element name="status" type="Status"/>
+      <xsd:element name="errors" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="error" type="error" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="header" type="ServiceHeader" minOccurs="0"/>
+      <xsd:element name="payload" type="xsd:anyType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="headerElements" final="extension restriction">
+    <xsd:sequence/>
+  </xsd:complexType>
+
+  <xsd:complexType name="ServiceHeader">
+    <xsd:sequence>
+      <xsd:element name="headerAttributes">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="entry" minOccurs="0" maxOccurs="unbounded">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="key" minOccurs="0" type="xsd:string"/>
+                  <xsd:element name="value" minOccurs="0" type="xsd:anyType"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="error">
+    <xsd:sequence>
+      <xsd:element name="code" type="xsd:string"/>
+      <xsd:element name="field" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="description" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="info" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="severity" type="errorSeverity" minOccurs="0"/>
+      <xsd:element name="category" type="errorCategory" minOccurs="0"/>
+      <xsd:element name="causes" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="cause" type="cause" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="errorIdentifiers" type="adaptedMap" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="cause">
+    <xsd:sequence>
+      <xsd:element name="code" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="field" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="type" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="description" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="adaptedMap">
+    <xsd:sequence>
+      <xsd:element name="entry" type="entry" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="entry">
+    <xsd:sequence>
+      <xsd:element name="key" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="value" type="xsd:anyType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="Status">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="OK"/>
+      <xsd:enumeration value="CREATED"/>
+      <xsd:enumeration value="ACCEPTED"/>
+      <xsd:enumeration value="NO_CONTENT"/>
+      <xsd:enumeration value="PARTIAL"/>
+      <xsd:enumeration value="MOVED_PERMANENT"/>
+      <xsd:enumeration value="FOUND"/>
+      <xsd:enumeration value="SEE_OTHER"/>
+      <xsd:enumeration value="NOT_MODIFIED"/>
+      <xsd:enumeration value="TEMPORARY_REDIRECT"/>
+      <xsd:enumeration value="BAD_REQUEST"/>
+      <xsd:enumeration value="UNAUTHORIZED"/>
+      <xsd:enumeration value="FORBIDDEN"/>
+      <xsd:enumeration value="NOT_FOUND"/>
+      <xsd:enumeration value="METHOD_NOT_ALLOWED"/>
+      <xsd:enumeration value="NOT_ACCEPTABLE"/>
+      <xsd:enumeration value="REQUEST_TIMEOUT"/>
+      <xsd:enumeration value="CONFLICT"/>
+      <xsd:enumeration value="UNSUPPORTED_MEDIA_TYPE"/>
+      <xsd:enumeration value="UNPROCESSABLE_ENTITY"/>
+      <xsd:enumeration value="FAIL"/>
+      <xsd:enumeration value="BAD_GATEWAY"/>
+      <xsd:enumeration value="SERVICE_UNAVAILABLE"/>
+      <xsd:enumeration value="GATEWAY_TIMEOUT"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="errorSeverity">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="INFO"/>
+      <xsd:enumeration value="WARN"/>
+      <xsd:enumeration value="ERROR"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="errorCategory">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="APPLICATION"/>
+      <xsd:enumeration value="SYSTEM"/>
+      <xsd:enumeration value="REQUEST"/>
+      <xsd:enumeration value="DATA"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+</xsd:schema>
+

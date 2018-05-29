@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PriceFeed xmlns="http://walmart.com/">
+  <PriceHeader>
+    <version>1.5.1</version>
+    <feedDate>2018-04-16T11:46:32.483-07:00</feedDate>
+  </PriceHeader>
+  <Price>
+    <itemIdentifier>
+      <sku>promo1</sku>
+    </itemIdentifier>
+    <pricingList replaceAll='true'>
+      <pricing effectiveDate="2018-04-03T09:49:57.943Z" expirationDate="2018-11-04T09:49:57.943Z" processMode="UPSERT">
+        <currentPrice>
+          <value amount="30.00"/>
+        </currentPrice>
+        <currentPriceType>CLEARANCE</currentPriceType>
+        <comparisonPrice>
+          <value amount="69.00"/>
+        </comparisonPrice>
+      </pricing>
+      <pricing effectiveDate="2018-11-07T16:02:58.762Z" expirationDate="2018-11-08T16:02:58.762Z" processMode="UPSERT">
+        <currentPrice>
+          <value amount="32.00"/>
+        </currentPrice>
+        <currentPriceType>REDUCED</currentPriceType>
+        <comparisonPrice>
+          <value amount="55.00"/>
+        </comparisonPrice>
+      </pricing>
+    </pricingList>
+  </Price>
+</PriceFeed>

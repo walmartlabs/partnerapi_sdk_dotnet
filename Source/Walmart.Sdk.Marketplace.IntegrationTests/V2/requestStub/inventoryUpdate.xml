@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wm:inventory xmlns:wm="http://walmart.com/">
+  <wm:sku>create-gmp1a</wm:sku>
+  <wm:quantity>
+    <wm:unit>EACH</wm:unit>
+    <wm:amount>23</wm:amount>
+  </wm:quantity>
+  <wm:fulfillmentLagTime>4</wm:fulfillmentLagTime>
+</wm:inventory>

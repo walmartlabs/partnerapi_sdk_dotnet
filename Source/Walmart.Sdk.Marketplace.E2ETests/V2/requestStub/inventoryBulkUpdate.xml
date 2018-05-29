@@ -1,0 +1,13 @@
+﻿<InventoryFeed xmlns="http://walmart.com/">
+  <InventoryHeader>
+    <version>1.4</version>
+  </InventoryHeader>
+  <inventory>
+    <sku>NETSDK_TEST</sku>
+    <quantity>
+      <unit>EACH</unit>
+      <amount>10</amount>
+    </quantity>
+    <fulfillmentLagTime>1</fulfillmentLagTime>
+  </inventory>
+</InventoryFeed>

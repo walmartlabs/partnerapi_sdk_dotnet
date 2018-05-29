@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Schema for data exchanged between Walmart and its partners.
+  Copyright 2015 Walmart Corporation. All rights reserved.
+-->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://walmart.com/"
+    targetNamespace="http://walmart.com/"
+    elementFormDefault="qualified"
+    version="2.0">
+
+  <xsd:include schemaLocation="FeedCommons.xsd" />
+  <xsd:include schemaLocation="PartnerFeedResponse.xsd" />
+
+  <xsd:element name="ItemStatusDetail">
+    <xsd:complexType>
+      <xsd:sequence>
+       <xsd:element name="meta" type="MetaInfo" minOccurs="1"/>
+       <xsd:element name="elements" type="Elements" minOccurs="0"/>
+       </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  
+  <xsd:complexType name="MetaInfo">
+    <xsd:sequence>
+      <xsd:element name="feedId" type="xsd:string" minOccurs="1">
+          <xsd:annotation>
+            <xsd:documentation>
+              UUID - a correlation id to partners so that they can query the status and response later for the feed
+            </xsd:documentation>
+          </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="feedStatus" type="FeedStatus" minOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>
+            overall status of the request. Item statuses are in items detail.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ingestionErrors" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            errors
+          </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ingestionError" type="IngestionError" minOccurs="0" maxOccurs="1000">
+          </xsd:element>
+        </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="itemsReceived" type="xsd:int" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            how many components were found in the feed
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="itemsSucceeded" type="xsd:int" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            how many items succeeded
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="itemsFailed" type="xsd:int" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            how many items ended in error, due to data error or system error, exact error type will be indicated by error code for the item
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="itemsProcessing" type="xsd:int" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            how many items are still being processed?
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="limit" type="xsd:int" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            number of items being reported in this response, used for response pagination of large feeds
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+        <xsd:element name="totalCount" type="xsd:int" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            number of items fetched from the system
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+        <xsd:element name="nextCursor" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            next cursor query which can be used for next pagination api call
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+   <xsd:complexType name="Elements">
+    <xsd:sequence>
+       <xsd:element name="itemDetails" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Indicates detailed response for the feed
+          </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="itemIngestionStatus" type="PartnerItemIngestionStatus" minOccurs="0" maxOccurs="1000">
+	        </xsd:element>
+	      </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  
+</xsd:schema>

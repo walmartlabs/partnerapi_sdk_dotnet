@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<errors>
+  <error>
+    <code>INVALID_REQUEST_HEADER.GMP_ORDER_API</code>
+    <field>WM_SVC.ENV</field>
+    <description>WM_SVC.ENV set blank or null</description>
+    <info>One or more request headers are invalid.</info>
+    <severity>ERROR</severity>
+    <category>DATA</category>
+    <causes></causes>
+    <errorIdentifiers></errorIdentifiers>
+  </error>
+</errors>

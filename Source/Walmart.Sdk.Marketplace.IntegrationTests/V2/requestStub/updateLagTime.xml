@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<LagTimeFeed xmlns="http://walmart.com/">
+  <LagTimeHeader>
+    <version>1.0</version>
+  </LagTimeHeader>
+  <lagTime>
+    <sku>1068155</sku>
+    <fulfillmentLagTime>0</fulfillmentLagTime>
+  </lagTime>
+  <lagTime>
+    <sku>10210321</sku>
+    <fulfillmentLagTime>0</fulfillmentLagTime>
+  </lagTime>
+</LagTimeFeed>

@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="settings.json" />
+    <None Remove="V2\requestStub\inventoryBulkUpdate.xml" />
+    <None Remove="V2\requestStub\inventoryUpdate.xml" />
+    <None Remove="V2\requestStub\itemFeed.xml" />
+    <None Remove="V2\requestStub\priceFeed.xml" />
+    <None Remove="V2\requestStub\updateLagTime.xml" />
+    <None Remove="V2\requestStub\updatePrice.xml" />
+    <None Remove="V2\requestStub\promotionFeed.xml" />
+    <None Remove="V3\requestStub\priceFeed.xml" />
+    <None Remove="V3\requestStub\promotionFeed.xml" />
+    <None Remove="V3\requestStub\updatePrice.xml" />
+    <None Remove="V3\requestStub\updatePromotion.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.0-preview-20180109-01" />
+    <PackageReference Include="Moq" Version="4.8.2" />
+    <PackageReference Include="xunit" Version="2.3.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+    <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="settings.json" />
+    <EmbeddedResource Include="V2\requestStub\inventoryBulkUpdate.xml" />
+    <EmbeddedResource Include="V2\requestStub\inventoryUpdate.xml" />
+    <EmbeddedResource Include="V2\requestStub\itemFeed.xml" />
+    <EmbeddedResource Include="V2\requestStub\priceFeed.xml" />
+    <EmbeddedResource Include="V2\requestStub\updateLagTime.xml" />
+    <EmbeddedResource Include="V2\requestStub\updatePrice.xml" />
+    <EmbeddedResource Include="V2\requestStub\promotionFeed.xml" />
+    <EmbeddedResource Include="V3\requestStub\itemFeed.xml" />
+    <EmbeddedResource Include="V3\requestStub\priceFeed.xml" />
+    <EmbeddedResource Include="V3\requestStub\promotionFeed.xml" />
+    <EmbeddedResource Include="V3\requestStub\updatePrice.xml" />
+    <EmbeddedResource Include="V3\requestStub\updatePromotion.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Walmart.Sdk.Base\Walmart.Sdk.Base.csproj">
+      <Project>{e8673926-7367-4983-847d-6ac541ed538a}</Project>
+      <Name>Walmart.Sdk.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Walmart.Sdk.Marketplace\Walmart.Sdk.Marketplace.csproj">
+      <Project>{c72116be-8b1e-4c19-ba61-049df563fd95}</Project>
+      <Name>Walmart.Sdk.Marketplace</Name>
+    </ProjectReference>
+  </ItemGroup>
+
+</Project>

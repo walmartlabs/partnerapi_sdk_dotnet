@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Schema for data exchanged between Walmart and its partners.
+  Copyright 2015 Walmart Corporation. All rights reserved.
+-->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://walmart.com/"
+  targetNamespace="http://walmart.com/"
+  elementFormDefault="qualified"
+  version="2.1">
+
+  <xsd:include schemaLocation="MPItemCommons.xsd" />
+
+    <xsd:element name="MPItemView" type="MPItemView"/>
+
+    <xsd:simpleType name="ItemPublishStatus">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="IN_PROGRESS" />
+            <xsd:enumeration value="READY_TO_PUBLISH" />
+            <xsd:enumeration value="PUBLISHED" />
+            <xsd:enumeration value="UNPUBLISHED" />
+            <xsd:enumeration value="STAGE" />
+            <xsd:enumeration value="SYSTEM_PROBLEM" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+  <xsd:complexType name="MPItemView">
+    <xsd:sequence>
+      <xsd:element name="mart" type="Mart" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            mart where the item would be listed
+          </xsd:documentation>
+        </xsd:annotation>  
+      </xsd:element>
+      <xsd:element name="sku" minOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>
+            partner's item identifier
+          </xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="255" />
+            <xsd:minLength value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="wpid" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Walmart's item identifier
+          </xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="12" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="upc" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            UPC
+          </xsd:documentation>
+        </xsd:annotation>
+	      <xsd:simpleType>
+		      <xsd:restriction base="xsd:string">
+			    <xsd:maxLength value="14" />
+		    </xsd:restriction>
+	      </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="gtin" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+          </xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1000"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="productName" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Title of the product to be displayed on the product details page.
+          </xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:maxLength value="200"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="shelf" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                    </xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1000"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="productType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                    </xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1000"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="price" type="Money" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>
+                      current price
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="publishedStatus" type="ItemPublishStatus" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        item publish status
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

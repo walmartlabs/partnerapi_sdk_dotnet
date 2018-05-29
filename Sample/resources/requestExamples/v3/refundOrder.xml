@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<orderRefund
+  xmlns:ns2="http://walmart.com/mp/v3/orders"
+  xmlns:ns3="http://walmart.com/">
+  <purchaseOrderId>2575193093772</purchaseOrderId>
+  <orderLines>
+    <orderLine>
+      <lineNumber>1</lineNumber>
+      <refunds>
+        <refund>
+          <refundComments>test test</refundComments>
+          <refundCharges>
+            <refundCharge>
+              <refundReason>DamagedItem</refundReason>
+              <charge>
+                <chargeType>PRODUCT</chargeType>
+                <chargeName>Item Price</chargeName>
+                <chargeAmount>
+                  <currency>USD</currency>
+                  <amount>-10.02</amount>
+                </chargeAmount>
+                <tax>
+                  <taxName>Item Price Tax</taxName>
+                  <taxAmount>
+                    <currency>USD</currency>
+                    <amount>-5.03</amount>
+                  </taxAmount>
+                </tax>
+              </charge>
+            </refundCharge>
+            <refundCharge>
+              <refundReason>TaxExemptCustomer</refundReason>
+              <charge>
+                <chargeType>SHIPPING</chargeType>
+                <chargeName>Shipping Price</chargeName>
+                <chargeAmount>
+                  <currency>USD</currency>
+                  <amount>-1.02</amount>
+                </chargeAmount>
+                <tax>
+                  <taxName>Shipping Tax</taxName>
+                  <taxAmount>
+                    <currency>USD</currency>
+                    <amount>-0.05</amount>
+                  </taxAmount>
+                </tax>
+              </charge>
+            </refundCharge>
+          </refundCharges>
+        </refund>
+      </refunds>
+    </orderLine>
+  </orderLines>
+</orderRefund>

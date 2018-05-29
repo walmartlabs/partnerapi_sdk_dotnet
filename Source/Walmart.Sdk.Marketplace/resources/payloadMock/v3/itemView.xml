@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:ItemResponses xmlns:ns2="http://walmart.com/">
+  <ns2:ItemResponse>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>JBC420U91W-2930-B</ns2:sku>
+    <ns2:wpid>2NW2IB8X2T07</ns2:wpid>
+    <ns2:gtin>04713072778628</ns2:gtin>
+    <ns2:productName>Jetway JBC420U91 Slim NUC Fanless Barebone, Intel Celeron N2930 Quad-core SoC, Max. 8GB RAM, HDMI,Intel LAN, HD Audio, Serial Port, New Thin Version</ns2:productName>
+    <ns2:productType>Desktop Computers</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>199.99</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>UNPUBLISHED</ns2:publishedStatus>
+  </ns2:ItemResponse>
+  <ns2:totalItems>1</ns2:totalItems>
+</ns2:ItemResponses>

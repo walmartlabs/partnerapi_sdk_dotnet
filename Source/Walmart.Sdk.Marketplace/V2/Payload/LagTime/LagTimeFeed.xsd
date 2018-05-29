@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Schema for data exchanged between Walmart and its partners.
+  Copyright 2017 Walmart Corporation. All rights reserved.
+-->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://walmart.com/"
+            targetNamespace="http://walmart.com/"
+            elementFormDefault="qualified"
+            version="1.0">
+
+    <xsd:include schemaLocation="LagTimeHeader.xsd" />
+    <xsd:include schemaLocation="LagTime.xsd" />
+
+    <xsd:element name="LagTmeFeed">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="LagTimeHeader" type="LagTimeHeader">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                           Lag Time feed header.
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:choice minOccurs="1" maxOccurs="100000">
+                  <xsd:element name="lagTime" type="LagTime"/>
+                </xsd:choice>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+
+
+</xsd:schema>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<ns2:errors xmlns:ns2="http://walmart.com/">
+  <ns2:error>
+    <ns2:code>INVALID_REQUEST</ns2:code>
+    <ns2:field>INVALID_REQUEST</ns2:field>
+    <ns2:description>INVALID_REQUEST, nooooooooooo!</ns2:description>
+    <ns2:info>One or more request headers are invalid.</ns2:info>
+    <ns2:severity>ERROR</ns2:severity>
+    <ns2:category>DATA</ns2:category>
+    <ns2:errorIdentifiers></ns2:errorIdentifiers>
+  </ns2:error>
+</ns2:errors>

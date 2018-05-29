@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://walmart.com/mp/v3/orders" targetNamespace="http://walmart.com/mp/v3/orders"
+	elementFormDefault="qualified" version="3.3">
+	
+	<xsd:include schemaLocation="CommonComponentsV3.3.xsd" />
+	
+	<xsd:element name="order" type="Order"/>
+	
+	<xsd:complexType name="Order" >
+			<xsd:sequence>
+				<xsd:element name="purchaseOrderId" type="xsd:string" >
+					<xsd:annotation>
+						<xsd:documentation>General Info about this PO</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="customerOrderId" type="xsd:string"  />
+				<xsd:element name="customerEmailId" type="xsd:string"  />
+				<xsd:element name="orderDate" type="xsd:dateTime"    />
+				<xsd:element name="shippingInfo" type="shippingInfoType" />
+				<xsd:element name="orderLines" type="orderLinesType"  />
+			</xsd:sequence>
+	</xsd:complexType>
+		
+
+	<xsd:complexType name="priceType">
+		<xsd:sequence>
+			<xsd:element name="total" type="xsd:float" />
+			<xsd:element name="retail" type="priceAndTaxType" />
+			<xsd:element name="shipping" type="priceAndTaxType" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="priceAndTaxType">
+		<xsd:sequence>
+			<xsd:element name="price" type="moneyType" />
+			<xsd:element name="tax" type="moneyType" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="shippingInfoType">
+		<xsd:annotation>
+			<xsd:documentation>start of shipping</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="phone" type="xsd:string" />
+			<xsd:element name="estimatedDeliveryDate" type="xsd:dateTime" />
+			<xsd:element name="estimatedShipDate" type="xsd:dateTime" />
+			<xsd:element name="methodCode" type="shippingMethodCodeType" />
+			<xsd:element name="postalAddress" type="postalAddressType" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="postalAddressType">
+		<xsd:sequence>
+			<xsd:element name="name" type="xsd:string" />
+			<xsd:element name="address1" type="xsd:string" />
+			<xsd:element name="address2" type="xsd:string" minOccurs="0" />
+			<xsd:element name="city" type="xsd:string" />
+			<xsd:element name="state" type="xsd:string" />
+			<xsd:element name="postalCode" type="xsd:string" />
+			<xsd:element name="country" type="xsd:string" />
+			<xsd:element name="addressType" type="xsd:string" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="orderLinesType">
+		<xsd:sequence>
+			<xsd:element name="orderLine" type="orderLineType" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="orderLineType">
+		<xsd:annotation>
+			<xsd:documentation> Start of Orderline info and
+				statuses Line status
+				will have Price, status and refund sections
+				Refund section will be
+				populated only if we have refund history and 
+				originalCarrierMethod will be populated only for 
+				applicable orders. Reference Lineid will only be
+				populated for Photo Services.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="lineNumber" type="xsd:string" />
+			<xsd:element name="item" type="itemType" />
+			<xsd:element name="charges" type="chargesType" />
+			<xsd:element name="orderLineQuantity" type="quantityType" />
+			<xsd:element name="statusDate" type="xsd:dateTime" />
+			<xsd:element name="orderLineStatuses" type="orderLineStatusesType" />
+			<xsd:element name="refund" type="refundType" minOccurs="0" />
+			<xsd:element name="originalCarrierMethod" type="xsd:string" minOccurs="0" />
+			<xsd:element name="referenceLineId" type="xsd:string" minOccurs="0" />
+			<xsd:element name="fulfillment" type="fulfillmentType" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="fulfillmentType">
+		<xsd:sequence>
+			<xsd:element name="fulfillmentOption" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="shipMethod" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="storeId" type="xsd:string" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="orderLineStatusesType">
+		<xsd:sequence>
+			<xsd:element name="orderLineStatus" type="orderLineStatusType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="orderLineStatusType">
+		<xsd:sequence>
+			<xsd:element name="status" type="orderLineStatusValueType" />
+			<xsd:element name="statusQuantity" type="quantityType" />
+			<xsd:element name="cancellationReason" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="trackingInfo" type="trackingInfoType"
+				minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	
+	<xsd:complexType name="itemType">
+		<xsd:sequence>
+			<xsd:element name="productName" type="xsd:string" />
+			<xsd:element name="sku" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+    <xsd:element name="list" type="ordersListType"/>
+     
+    <xsd:complexType name="ordersListType">
+    <xsd:sequence>
+      <xsd:element name="meta" type="metaType"/>
+      <xsd:element name="elements" type="elementsType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="metaType">
+    <xsd:sequence>
+      <xsd:element name="totalCount" type="xsd:int" minOccurs="0" />
+      <xsd:element name="limit" type="xsd:int"/>
+      <xsd:element name="nextCursor" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="elementsType">
+    <xsd:sequence>
+      <xsd:element name="order" type="Order" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>

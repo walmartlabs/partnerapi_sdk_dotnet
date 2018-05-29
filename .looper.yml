@@ -1,0 +1,46 @@
+tools:
+  nuget: 4.1.0
+  dotnetsdk: 2.0.0
+  
+flows:
+  default:
+    - call: startup
+    - call: build
+    - call: unit_tests
+    - call: integration_tests
+  startup:
+    - echo $NUGET_GALLERY
+    - echo $NUGET_REPO_PUSH_URL
+    - echo $NUGET_APIKEY
+  sonar:
+    - dir(Source):
+      - |
+        (name Sonar Build Process)
+        docker -v
+        dotnet ./sonar-scanner/SonarScanner.MSBuild.dll begin /d:sonar.verbose=true /d:sonar.host.url=$SONAR_URL /k:WalmartSdkMarketplaceDotNet /n:WalmartSdkMarketplaceDotNet /d:sonar.sources=Walmart.Sdk.Marketplace/ /d:sonar.tests=Walmart.Sdk.Marketplace.IntegrationTests/ /d:sonar.cs.opencover.reportsPaths=coveragereport.xml /d:sonar.cs.xunit.reportsPaths=TestResult.xml /d:sonar.dotnet.excludeGeneratedCode=true
+        dotnet msbuild /t:Rebuild /p:Configuration=Release Walmart.Sdk.sln
+        dotnet xunit -xml TestResult.xml Walmart.Sdk.Marketplace.IntegrationTests/Walmart.Sdk.Marketplace.IntegrationTests.csproj
+        dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover Walmart.Sdk.Marketplace.IntegrationTests/Walmart.Sdk.Marketplace.IntegrationTests.csproj
+        dotnet ./sonar-scanner/SonarScanner.MSBuild.dll end
+  unit_tests:
+    - dir(Source/Walmart.Sdk.Base.Tests):
+      - dotnet restore Walmart.Sdk.Base.Tests.csproj --source $NUGET_GALLERY 
+      - dotnet test -l trx
+  integration_tests:
+    - dir(Source/Walmart.Sdk.Marketplace.IntegrationTests):
+      - dotnet restore Walmart.Sdk.Marketplace.IntegrationTests.csproj --source $NUGET_GALLERY
+      - dotnet test -l trx
+  build:
+    - dir(Source):
+      - dotnet restore Walmart.Sdk.sln --source $NUGET_GALLERY
+      - dotnet build Walmart.Sdk.sln --configuration Release --verbosity detailed
+  publish:
+    - dir(Source/Walmart.Sdk.Marketplace):
+      - |
+        (name Package&Publish for NuGet Package)
+        dotnet build -c Release Walmart.Sdk.Marketplace.csproj
+        dotnet pack Walmart.Sdk.Marketplace.csproj /p:NuspecFile=$(pwd)/Walmart.Sdk.Marketplace.nuspec /p:NuspecProperties="config=Release;target=netstandard1.3" /p:NuspecBasePath=$(pwd) -c Release
+        PACKAGE_FILE=$(find . -name "*.nupkg")
+        dotnet nuget push $PACKAGE_FILE --api-key $NUGET_APIKEY --source $NUGET_REPO_PUSH_URL
+
+

@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://walmart.com/mp/v3/orders" targetNamespace="http://walmart.com/mp/v3/orders"
+	elementFormDefault="qualified" version="3.3">
+
+	<xsd:simpleType name="orderLineStatusValueType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Created" />
+			<xsd:enumeration value="Acknowledged" />
+			<xsd:enumeration value="Shipped" />
+			<xsd:enumeration value="Cancelled" />
+			<xsd:enumeration value="Refund" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="shippingMethodCodeType">
+		<xsd:restriction base="xsd:string">
+			<!-- Standard -101 -->
+			<xsd:enumeration value="Standard" />
+			<!-- Express - 102 -->
+			<xsd:enumeration value="Express" />
+			<!-- One-Day -103 -->
+			<xsd:enumeration value="OneDay" />
+			<!-- Freight -104 -->
+			<xsd:enumeration value="Freight" />
+			<!-- White Glove - 105 -->
+			<xsd:enumeration value="WhiteGlove" />
+			<!-- Value Shipping -->
+			<xsd:enumeration value="Value" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:complexType name="quantityType">
+		<xsd:sequence>
+			<xsd:element name="unitOfMeasurement" type="xsd:string" />
+			<xsd:element name="amount" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="asnType">
+		<xsd:sequence>
+			<xsd:element name="packageASN" type="xsd:string" />
+			<xsd:element name="palletASN" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="trackingInfoType">
+		<xsd:annotation>
+  			<xsd:documentation>
+ 			   If using OtherCarrier instead of listed Carriers,
+ 			   sellers must provide trackingURL. The below assert will be imposed from
+ 			   version 1.1
+ 			   <xsd:assert test="exists(@otherCarrier) = exists(@trackingURL)" />
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="shipDateTime" type="xsd:dateTime" />
+			<xsd:element name="carrierName" type="carrierNameType" />
+			<xsd:element name="methodCode" type="shippingMethodCodeType" />
+			<xsd:element name="trackingNumber" type="xsd:string" />
+			<xsd:element name="trackingURL" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="carrierNameType">
+	  <xsd:choice minOccurs="1" maxOccurs="1">
+			<xsd:element name="otherCarrier" type="xsd:string" />
+			<xsd:element name="carrier" type="carrierType" />
+	  </xsd:choice>
+	</xsd:complexType>
+	
+	<xsd:simpleType name="carrierType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="UPS" />
+			<xsd:enumeration value="USPS" />
+			<xsd:enumeration value="FedEx" />
+			<xsd:enumeration value="Airborne" />
+			<xsd:enumeration value="OnTrac" />
+			<xsd:enumeration value="DHL" />
+			<xsd:enumeration value="NG" />
+			<xsd:enumeration value="LS" />
+			<xsd:enumeration value="UDS" />
+			<xsd:enumeration value="UPSMI" />
+			<xsd:enumeration value="FDX" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="cancellationReasonType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="CANCEL_BY_SELLER" />
+			<xsd:enumeration value="CUSTOMER_REQUESTED_SELLER_TO_CANCEL" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+
+	<xsd:simpleType name="reasonCodesType">
+		<xsd:restriction base="xsd:string">
+			<!-- Billing Error - 7 -->
+			<xsd:enumeration value="BillingError" />
+			<!-- Tax Exempt Customer - 13 -->
+			<xsd:enumeration value="TaxExemptCustomer" />
+			<!-- Item not as Advertised - 115 -->
+			<xsd:enumeration value="ItemNotAsAdvertised" />
+			<!-- Incorrect Item Received -119 -->
+			<xsd:enumeration value="IncorrectItemReceived" />
+			<!-- Cancelled order was shipped - 123 -->
+			<xsd:enumeration value="CancelledYetShipped" />
+			<!-- Customer did not receive item -141 -->
+			<xsd:enumeration value="ItemNotReceivedByCustomer" />
+			<!-- Shipping Price Discrepancy -150 -->
+			<xsd:enumeration value="IncorrectShippingPrice" />
+			<!-- Damaged Item -157 -->
+			<xsd:enumeration value="DamagedItem" />
+			<!-- Defective Item -159 -->
+			<xsd:enumeration value="DefectiveItem" />
+			<!-- Customer Changed Mind-178 -->
+			<xsd:enumeration value="CustomerChangedMind" />
+			<!-- Customer received the item later than max EDD -189 -->
+			<xsd:enumeration value="CustomerReceivedItemLate" />
+			<!-- Finance Goodwill 1001 -->
+			<xsd:enumeration value="Finance -> Goodwill" />
+			<!-- Finance Rollback 1002 -->
+			<xsd:enumeration value="Finance -> Rollback" />
+			<!-- Missing Parts Instructions 1003 -->
+			<xsd:enumeration value="Missing Parts / Instructions" />
+			<!-- Buyer canceled 1004 -->
+			<xsd:enumeration value="Buyer canceled" />
+			<!-- Customer returned item 1005 -->
+			<xsd:enumeration value="Customer returned item" />
+			<!-- General adjustment 1006 -->
+			<xsd:enumeration value="General adjustment" />
+			<!-- Merchandise not received 1007 -->
+			<xsd:enumeration value="Merchandise not received" />
+			<!-- Quality -> Missing Parts / Instructions 1008 -->
+			<xsd:enumeration value="Quality -> Missing Parts / Instructions" />
+			<!-- Shipping & Delivery -> Damaged 1009 -->
+			<xsd:enumeration value="Shipping &amp; Delivery -> Damaged" />
+			<!-- Shipping & Delivery -> Shipping Price Discrepancy 1010 -->
+			<xsd:enumeration value="Shipping &amp; Delivery -> Shipping Price Discrepancy" />
+			<!-- Others 1000 -->
+			<xsd:enumeration value="Others" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:complexType name="refundType">
+		<xsd:sequence>
+			<xsd:element name="refundId" type="xsd:string" minOccurs="0" />
+			<xsd:element name="refundComments" type="xsd:string" minOccurs="0" />
+			<xsd:element name="refundCharges" type="refundChargesType" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="chargesType">
+		<xsd:sequence>
+			<xsd:element name="charge" type="chargeType" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="refundChargesType">
+		<xsd:sequence>
+			<xsd:element name="refundCharge" type="refundChargeType" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="refundChargeType">
+		<xsd:annotation>
+			<xsd:documentation>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+		    <xsd:element name="refundReason" type="reasonCodesType" />
+			<xsd:element name="charge" type="chargeType" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="chargeType">
+		<xsd:annotation>
+			<xsd:documentation>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="chargeType" type="xsd:string" />
+			<xsd:element name="chargeName" type="xsd:string" />
+			<xsd:element name="chargeAmount" type="moneyType" />
+			<xsd:element name="tax" type="taxType" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="taxType">
+		<xsd:annotation>
+			<xsd:documentation>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="taxName" type="xsd:string" />
+			<xsd:element name="taxAmount" type="moneyType" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+
+	<xsd:complexType name="moneyType">
+		<xsd:sequence>
+			<xsd:element name="currency" type="currencyType"
+				minOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>
+						Represents the Currency of the price
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="amount" >
+				<xsd:annotation>
+					<xsd:documentation>
+						Represents the price
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal">
+						<xsd:totalDigits value="11" />
+						<xsd:fractionDigits value="4" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="currencyType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="AED" />
+			<xsd:enumeration value="AFN" />
+			<xsd:enumeration value="ALL" />
+			<xsd:enumeration value="AMD" />
+			<xsd:enumeration value="ANG" />
+			<xsd:enumeration value="AOA" />
+			<xsd:enumeration value="ARS" />
+			<xsd:enumeration value="AUD" />
+			<xsd:enumeration value="AWG" />
+			<xsd:enumeration value="AZN" />
+			<xsd:enumeration value="BAM" />
+			<xsd:enumeration value="BBD" />
+			<xsd:enumeration value="BDT" />
+			<xsd:enumeration value="BGN" />
+			<xsd:enumeration value="BHD" />
+			<xsd:enumeration value="BIF" />
+			<xsd:enumeration value="BMD" />
+			<xsd:enumeration value="BND" />
+			<xsd:enumeration value="BOB" />
+			<xsd:enumeration value="BRL" />
+			<xsd:enumeration value="BSD" />
+			<xsd:enumeration value="BTN" />
+			<xsd:enumeration value="BWP" />
+			<xsd:enumeration value="BYR" />
+			<xsd:enumeration value="BZD" />
+			<xsd:enumeration value="CAD" />
+			<xsd:enumeration value="CDF" />
+			<xsd:enumeration value="CHF" />
+			<xsd:enumeration value="CLP" />
+			<xsd:enumeration value="CNY" />
+			<xsd:enumeration value="COP" />
+			<xsd:enumeration value="CRC" />
+			<xsd:enumeration value="CUP" />
+			<xsd:enumeration value="CVE" />
+			<xsd:enumeration value="CZK" />
+			<xsd:enumeration value="DJF" />
+			<xsd:enumeration value="DKK" />
+			<xsd:enumeration value="DOP" />
+			<xsd:enumeration value="DZD" />
+			<xsd:enumeration value="EGP" />
+			<xsd:enumeration value="ERN" />
+			<xsd:enumeration value="ETB" />
+			<xsd:enumeration value="EUR" />
+			<xsd:enumeration value="FJD" />
+			<xsd:enumeration value="FKP" />
+			<xsd:enumeration value="GBP" />
+			<xsd:enumeration value="GEL" />
+			<xsd:enumeration value="GHS" />
+			<xsd:enumeration value="GIP" />
+			<xsd:enumeration value="GMD" />
+			<xsd:enumeration value="GNF" />
+			<xsd:enumeration value="GTQ" />
+			<xsd:enumeration value="GYD" />
+			<xsd:enumeration value="HKD" />
+			<xsd:enumeration value="HNL" />
+			<xsd:enumeration value="HRK" />
+			<xsd:enumeration value="HTG" />
+			<xsd:enumeration value="HUF" />
+			<xsd:enumeration value="IDR" />
+			<xsd:enumeration value="ILS" />
+			<xsd:enumeration value="INR" />
+			<xsd:enumeration value="IQD" />
+			<xsd:enumeration value="IRR" />
+			<xsd:enumeration value="ISK" />
+			<xsd:enumeration value="JMD" />
+			<xsd:enumeration value="JOD" />
+			<xsd:enumeration value="JPY" />
+			<xsd:enumeration value="KES" />
+			<xsd:enumeration value="KGS" />
+			<xsd:enumeration value="KHR" />
+			<xsd:enumeration value="KMF" />
+			<xsd:enumeration value="KPW" />
+			<xsd:enumeration value="KRW" />
+			<xsd:enumeration value="KWD" />
+			<xsd:enumeration value="KYD" />
+			<xsd:enumeration value="KZT" />
+			<xsd:enumeration value="LAK" />
+			<xsd:enumeration value="LBP" />
+			<xsd:enumeration value="LKR" />
+			<xsd:enumeration value="LRD" />
+			<xsd:enumeration value="LSL" />
+			<xsd:enumeration value="LTL" />
+			<xsd:enumeration value="LVL" />
+			<xsd:enumeration value="LYD" />
+			<xsd:enumeration value="MAD" />
+			<xsd:enumeration value="MDL" />
+			<xsd:enumeration value="MGA" />
+			<xsd:enumeration value="MKD" />
+			<xsd:enumeration value="MMK" />
+			<xsd:enumeration value="MNT" />
+			<xsd:enumeration value="MOP" />
+			<xsd:enumeration value="MRO" />
+			<xsd:enumeration value="MUR" />
+			<xsd:enumeration value="MVR" />
+			<xsd:enumeration value="MWK" />
+			<xsd:enumeration value="MXN" />
+			<xsd:enumeration value="MYR" />
+			<xsd:enumeration value="MZN" />
+			<xsd:enumeration value="NAD" />
+			<xsd:enumeration value="NGN" />
+			<xsd:enumeration value="NIO" />
+			<xsd:enumeration value="NOK" />
+			<xsd:enumeration value="NPR" />
+			<xsd:enumeration value="NZD" />
+			<xsd:enumeration value="OMR" />
+			<xsd:enumeration value="PAB" />
+			<xsd:enumeration value="PEN" />
+			<xsd:enumeration value="PGK" />
+			<xsd:enumeration value="PHP" />
+			<xsd:enumeration value="PKR" />
+			<xsd:enumeration value="PLN" />
+			<xsd:enumeration value="PYG" />
+			<xsd:enumeration value="QAR" />
+			<xsd:enumeration value="RON" />
+			<xsd:enumeration value="RSD" />
+			<xsd:enumeration value="RUB" />
+			<xsd:enumeration value="RUR" />
+			<xsd:enumeration value="RWF" />
+			<xsd:enumeration value="SAR" />
+			<xsd:enumeration value="SBD" />
+			<xsd:enumeration value="SCR" />
+			<xsd:enumeration value="SDG" />
+			<xsd:enumeration value="SEK" />
+			<xsd:enumeration value="SGD" />
+			<xsd:enumeration value="SHP" />
+			<xsd:enumeration value="SLL" />
+			<xsd:enumeration value="SOS" />
+			<xsd:enumeration value="SRD" />
+			<xsd:enumeration value="STD" />
+			<xsd:enumeration value="SYP" />
+			<xsd:enumeration value="SZL" />
+			<xsd:enumeration value="THB" />
+			<xsd:enumeration value="TJS" />
+			<xsd:enumeration value="TMT" />
+			<xsd:enumeration value="TND" />
+			<xsd:enumeration value="TOP" />
+			<xsd:enumeration value="TRY" />
+			<xsd:enumeration value="TTD" />
+			<xsd:enumeration value="TWD" />
+			<xsd:enumeration value="TZS" />
+			<xsd:enumeration value="UAH" />
+			<xsd:enumeration value="UGX" />
+			<xsd:enumeration value="USD" />
+			<xsd:enumeration value="UYU" />
+			<xsd:enumeration value="UZS" />
+			<xsd:enumeration value="VEF" />
+			<xsd:enumeration value="VND" />
+			<xsd:enumeration value="VUV" />
+			<xsd:enumeration value="WST" />
+			<xsd:enumeration value="XAF" />
+			<xsd:enumeration value="XAG" />
+			<xsd:enumeration value="XAU" />
+			<xsd:enumeration value="XBA" />
+			<xsd:enumeration value="XBB" />
+			<xsd:enumeration value="XBC" />
+			<xsd:enumeration value="XBD" />
+			<xsd:enumeration value="XCD" />
+			<xsd:enumeration value="XDR" />
+			<xsd:enumeration value="XFU" />
+			<xsd:enumeration value="XOF" />
+			<xsd:enumeration value="XPD" />
+			<xsd:enumeration value="XPF" />
+			<xsd:enumeration value="XPT" />
+			<xsd:enumeration value="XTS" />
+			<xsd:enumeration value="XXX" />
+			<xsd:enumeration value="YER" />
+			<xsd:enumeration value="ZAR" />
+			<xsd:enumeration value="ZMK" />
+			<xsd:enumeration value="ZWL" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+</xsd:schema>

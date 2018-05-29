@@ -1,0 +1,72 @@
+﻿{
+	"GET_/v2/feeds/": "v2.feedStatus",
+	"POST_/v2/feeds?feedType=": "v2.uploadedFeed",
+
+	"GET_/v2/items": "v2.itemsList",
+	"GET_/v2/items/": "v2.itemView",
+	"DELETE_/v2/items/": "v2.itemRetire",
+
+	"PUT_/v2/prices?": "v2.priceUpdated",
+
+	"GET_/v2/inventory": "v2.itemInventory",
+	"PUT_/v2/inventory": "v2.itemInventory",
+	"POST_/v2/feeds?feedType=inventory": "v2.uploadedFeed",
+	"POST_/v2/feeds?feedType=promo": "v2.uploadedFeed",
+
+	"GET_/v2/orders/released":  "v2.releasedOrders",
+	"GET_/v2/orders/released/?cursor&":  "v2.releasedOrders",
+	"GET_/v2/orders/test":  "v2.order",
+	"GET_/v2/orders?":  "v2.allOrders",
+	"GET_/v2/orders?status=Created":  "v2.listReleasedOrders",
+	"GET_/v2/orders?status=Acknowledged":  "v2.listAcknowledgedOrders",
+	"GET_/v2/orders?status=Shipped":  "v2.listShippedOrders",
+	"GET_/v2/orders?status=Cancelled":  "v2.listCancelledOrders",
+	"GET_/v2/orders?cursor&":  "v2.allOrders",
+	"POST_/v2/orders/test/acknowledge":  "v2.orderAck",
+	"POST_/v2/orders/test/cancel":  "v2.orderCancel",
+	"POST_/v2/orders/test/refund":  "v2.orderRefund",
+	"POST_/v2/orders/test/shipping":  "v2.orderShipping",
+	"GET_/v2/lagtime?": "v2.lagTime",
+	"POST_/v2/feeds?feedType=lagtime": "v2.uploadedFeed",
+
+	"GET_/v2/orders": "v2.404_error",
+	"GET_/v2": "v2.404_error",
+	"POST_/v2": "v2.404_error",
+	"DELETE_/v2": "v2.404_error",
+	"PUT_/v2": "v2.404_error",
+
+
+	"GET_/v3/feeds/": "v3.feedStatus",
+	"POST_/v3/feeds?feedType=": "v3.uploadedFeed",
+	"GET_/v3/feeds": "v3.allFeedStatuses",
+
+	"PUT_/v3/price": "v2.priceUpdated",
+
+	"GET_/v3/items": "v3.itemsList",
+	"GET_/v3/items/": "v3.itemView",
+	"DELETE_/v3/items/": "v3.itemRetire",
+
+	"GET_/v3/orders/released":  "v3.releasedOrders",
+	"GET_/v3/orders/released/?cursor&":  "v3.releasedOrders",
+	"GET_/v3/orders?":  "v3.allOrders",
+	"GET_/v3/orders?status=Created":  "v3.listReleasedOrders",
+	"GET_/v3/orders?status=Acknowledged":  "v3.listAcknowledgedOrders",
+	"GET_/v3/orders?status=Shipped":  "v3.listShippedOrders",
+	"GET_/v3/orders?status=Cancelled":  "v3.listCancelledOrders",
+	"GET_/v3/orders?cursor&":  "v3.allOrders",
+	"GET_/v3/orders/test":  "v3.order",
+	"POST_/v3/orders/test/acknowledge":  "v3.orderAck",
+	"POST_/v3/orders/test/cancel":  "v3.orderCancel",
+	"POST_/v3/orders/test/refund":  "v3.orderRefund",
+	"POST_/v3/orders/test/shipping":  "v3.orderShipping",
+	
+	"GET_/v3/promo/sku/": "v3.promotionView",
+	"PUT_/v3/price?promo=true": "v3.promotionPrice",
+
+	"GET_/v3/orders": "v3.404_error",
+	"GET_/v3": "v3.404_error",
+	"POST_/v3": "v3.404_error",
+	"DELETE_/v3": "v3.404_error",
+	"PUT_/v3": "v3.404_error"
+
+}

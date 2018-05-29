@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceResponse xmlns:ns2="http://walmart.com/">
+  <status>OK</status>
+  <errors/>
+  <header>
+    <headerAttributes/>
+  </header>
+  <payload xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:itemPriceType">
+    <ns2:itemIdentifier>
+      <ns2:sku>WGU-002 Standalone</ns2:sku>
+      <ns2:offerId>7EE714E29AE6419FAA63F81B41000417</ns2:offerId>
+    </ns2:itemIdentifier>
+    <ns2:pricingList>
+      <ns2:pricing effectiveDate="2016-09-04T01:26:44.296Z" expirationDate="2016-09-05T01:26:44.296Z" promoId="889b4d96-2e00-4a4a-8152-42d101b99192">
+        <ns2:currentPrice>
+          <ns2:value amount="24"></ns2:value>
+        </ns2:currentPrice>
+        <ns2:currentPriceType>CLEARANCE</ns2:currentPriceType>
+        <ns2:comparisonPrice>
+          <ns2:value amount="86"></ns2:value>
+        </ns2:comparisonPrice>
+      </ns2:pricing>
+    </ns2:pricingList>
+  </payload>
+</ServiceResponse>

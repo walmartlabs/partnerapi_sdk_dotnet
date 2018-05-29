@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<ns3:order
+  xmlns:ns3="http://walmart.com/mp/orders">
+  <ns3:purchaseOrderId>test</ns3:purchaseOrderId>
+  <ns3:customerOrderId>4021603441441</ns3:customerOrderId>
+  <ns3:customerEmailId>mgr@walmartlabs.com</ns3:customerEmailId>
+  <ns3:orderDate>2016-05-11T22:59:03.000Z</ns3:orderDate>
+  <ns3:shippingInfo>
+    <ns3:phone>6502248603</ns3:phone>
+    <ns3:estimatedDeliveryDate>2016-05-20T17:00:00.000Z</ns3:estimatedDeliveryDate>
+    <ns3:estimatedShipDate>2016-05-16T17:00:00.000Z</ns3:estimatedShipDate>
+    <ns3:methodCode>Standard</ns3:methodCode>
+    <ns3:postalAddress>
+      <ns3:name>Joe Doe PGOMS</ns3:name>
+      <ns3:address1>860 W Cal Ave</ns3:address1>
+      <ns3:address2>Seat # 860C.2.176</ns3:address2>
+      <ns3:city>Sunnyvale</ns3:city>
+      <ns3:state>CA</ns3:state>
+      <ns3:postalCode>94086</ns3:postalCode>
+      <ns3:country>USA</ns3:country>
+      <ns3:addressType>RESIDENTIAL</ns3:addressType>
+    </ns3:postalAddress>
+  </ns3:shippingInfo>
+  <ns3:orderLines>
+    <ns3:orderLine>
+      <ns3:lineNumber>1</ns3:lineNumber>
+      <ns3:item>
+        <ns3:productName>Garmin Refurbished nuvi 2595LMT 5 GPS w Lifetime Maps and Traffic</ns3:productName>
+        <ns3:sku>GRMN100201</ns3:sku>
+      </ns3:item>
+      <ns3:charges>
+        <ns3:charge>
+          <ns3:chargeType>PRODUCT</ns3:chargeType>
+          <ns3:chargeName>ItemPrice</ns3:chargeName>
+          <ns3:chargeAmount>
+            <ns3:currency>USD</ns3:currency>
+            <ns3:amount>0.00</ns3:amount>
+          </ns3:chargeAmount>
+          <ns3:tax>
+            <ns3:taxName>Tax1</ns3:taxName>
+            <ns3:taxAmount>
+              <ns3:currency>USD</ns3:currency>
+              <ns3:amount>0.00</ns3:amount>
+            </ns3:taxAmount>
+          </ns3:tax>
+        </ns3:charge>
+      </ns3:charges>
+      <ns3:orderLineQuantity>
+        <ns3:unitOfMeasurement>EACH</ns3:unitOfMeasurement>
+        <ns3:amount>1</ns3:amount>
+      </ns3:orderLineQuantity>
+      <ns3:statusDate>2016-06-04T00:20:15.000Z</ns3:statusDate>
+      <ns3:orderLineStatuses>
+        <ns3:orderLineStatus>
+          <ns3:status>Cancelled</ns3:status>
+          <ns3:statusQuantity>
+            <ns3:unitOfMeasurement>EACH</ns3:unitOfMeasurement>
+            <ns3:amount>1</ns3:amount>
+          </ns3:statusQuantity>
+        </ns3:orderLineStatus>
+      </ns3:orderLineStatuses>
+    </ns3:orderLine>
+  </ns3:orderLines>
+</ns3:order>

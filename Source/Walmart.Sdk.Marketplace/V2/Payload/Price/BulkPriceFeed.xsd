@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Schema for data exchanged between Walmart and its partners.
+  Copyright 2015 Walmart Corporation. All rights reserved.
+-->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://walmart.com/"
+            targetNamespace="http://walmart.com/"
+            elementFormDefault="qualified"
+            xmlns:gmp="http://walmart.com/"
+            version="1.5.1">
+
+    <xsd:element type="gmp:feedHeaderType" name="PriceHeader"/>
+    <xsd:element type="gmp:itemPriceType" name="Price" />
+
+    <xsd:element name="PriceFeed">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element type="gmp:feedHeaderType" name="PriceHeader"/>
+                <xsd:element type="gmp:itemPriceType" name="Price" maxOccurs="5000"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="feedHeaderType">
+        <xsd:sequence>
+            <xsd:element name="version" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        This indicates schema version associated with the XML payload
+                    </xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="1.5.1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="feedDate" type="xsd:dateTime" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Date at which the feed is sent by the partner. This date is only for audit purposes and
+                        does not carry any other meaning.
+                        The dateTime is specified in the following form "YYYY-MM-DDThh:mm:ss" where:
+                        YYYY indicates the year
+                        MM indicates the month
+                        DD indicates the day
+                        T indicates the start of the required time section
+                        hh indicates the hour
+                        mm indicates the minute
+                        ss indicates the second
+                        Note: All components are required!
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="itemPriceType">
+        <xsd:sequence>
+            <xsd:element name="itemIdentifier" type="gmp:itemIdentifierType">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        This holds the identifying information of the item
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="pricingList" type="gmp:pricingListType">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        This holds pricing information for each item
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="pricingListType">
+        <xsd:sequence>
+            <xsd:element name="pricing" type="gmp:pricingType"  minOccurs="0" maxOccurs="10"/>
+        </xsd:sequence>
+        <xsd:attribute name="replaceAll" type="xsd:boolean" use="optional" default="false" />
+    </xsd:complexType>
+    <xsd:complexType name="pricingType">
+        <xsd:sequence>
+            <xsd:element name="currentPrice" type="gmp:price">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Current price value of the item
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="currentPriceType" type="gmp:priceType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Current price type to indicate the type of promotion like REDUCED/CLEARANCE
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="comparisonPrice" minOccurs="0" type="gmp:price">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        The price that the current price is compared to
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="priceDisplayCodes" type="gmp:priceDisplayCodes" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Price display codes used to indicate a MAP promotion
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="effectiveDate" type="xsd:dateTime" use="optional"/>
+        <xsd:attribute name="expirationDate" type="xsd:dateTime" use="optional"/>
+        <xsd:attribute name="promoId" type="xsd:string" use="optional"/>
+        <xsd:attribute name="processMode" type="gmp:processModeType" use="optional" />
+    </xsd:complexType>
+
+    <xsd:complexType name="itemIdentifierType">
+        <xsd:sequence>
+            <xsd:choice minOccurs="1" maxOccurs="1">
+                <xsd:element name="sku">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:minLength value="1" />
+                            <xsd:maxLength value="255" />
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="offerId">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:length value="36" fixed="true" />
+                            <xsd:pattern value="[0-9A-F]{12}4[0-9A-F]{3}[8-9A-B][0-9A-F]{15}" />
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+            </xsd:choice>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="price">
+        <xsd:sequence>
+            <xsd:element name="value" type="gmp:moneyType" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="moneyType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute type="xsd:string" name="currency" default="USD" use="optional"/>
+                <xsd:attribute type="xsd:decimal" name="amount" use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:simpleType name="priceType">
+        <xsd:restriction base="xsd:token">
+            <xsd:enumeration value="BASE"/>
+            <xsd:enumeration value="REDUCED"/>
+            <xsd:enumeration value="CLEARANCE"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="priceDisplayCodes">
+        <xsd:attribute type="gmp:submapType" name="submapType" use="optional"/>
+    </xsd:complexType>
+    <xsd:simpleType name="submapType">
+        <xsd:restriction base="xsd:token">
+            <xsd:enumeration value="CART"/>
+            <xsd:enumeration value="CHECKOUT"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="processModeType">
+        <xsd:restriction base="xsd:token">
+            <xsd:enumeration value="UPSERT"/>
+            <xsd:enumeration value="DELETE"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+</xsd:schema>

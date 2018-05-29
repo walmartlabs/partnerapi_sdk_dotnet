@@ -1,0 +1,168 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework> 
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="resources\payloadMock\feedStatus.xml" />
+    <None Remove="resources\payloadMock\uploadedItem.xml" />
+    <None Remove="resources\payloadMock\v2\404_error.xml" />
+    <None Remove="resources\payloadMock\v2\allOrders.xml" />
+    <None Remove="resources\payloadMock\v2\itemInventory.xml" />
+    <None Remove="resources\payloadMock\v2\itemRetire.xml" />
+    <None Remove="resources\payloadMock\v2\itemsList.xml" />
+    <None Remove="resources\payloadMock\v2\itemView.xml" />
+    <None Remove="resources\payloadMock\v2\lagtime.xml" />
+    <None Remove="resources\payloadMock\v2\listAcknowledgedOrders.xml" />
+    <None Remove="resources\payloadMock\v2\listCancelledOrders.xml" />
+    <None Remove="resources\payloadMock\v2\listOrders.xml" />
+    <None Remove="resources\payloadMock\v2\listReleasedOrders.xml" />
+    <None Remove="resources\payloadMock\v2\listShippedOrders.xml" />
+    <None Remove="resources\payloadMock\v2\listSkuOrders.xml" />
+    <None Remove="resources\payloadMock\v2\order.xml" />
+    <None Remove="resources\payloadMock\v2\orderAck.xml" />
+    <None Remove="resources\payloadMock\v2\orderCancel.xml" />
+    <None Remove="resources\payloadMock\v2\orderRefund.xml" />
+    <None Remove="resources\payloadMock\v2\orderShipping.xml" />
+    <None Remove="resources\payloadMock\v2\priceUpdated.xml" />
+    <None Remove="resources\payloadMock\v2\refundOrder.xml" />
+    <None Remove="resources\payloadMock\v2\releasedOrders.xml" />
+    <None Remove="resources\payloadMock\v2\shipOrder.xml" />
+    <None Remove="resources\payloadMock\v3\404_error.xml" />
+    <None Remove="resources\payloadMock\v3\allFeedStatuses.xml" />
+    <None Remove="resources\payloadMock\v3\allOrders.xml" />
+    <None Remove="resources\payloadMock\v3\feedStatus.xml" />
+    <None Remove="resources\payloadMock\v3\itemRetire.xml" />
+    <None Remove="resources\payloadMock\v3\itemsList.xml" />
+    <None Remove="resources\payloadMock\v3\itemView.xml" />
+    <None Remove="resources\payloadMock\v3\listAcknowledgedOrders.xml" />
+    <None Remove="resources\payloadMock\v3\listCancelledOrders.xml" />
+    <None Remove="resources\payloadMock\v3\listOrders.xml" />
+    <None Remove="resources\payloadMock\v3\listReleasedOrders.xml" />
+    <None Remove="resources\payloadMock\v3\listShippedOrders.xml" />
+    <None Remove="resources\payloadMock\v3\listSkuOrders.xml" />
+    <None Remove="resources\payloadMock\v3\order.xml" />
+    <None Remove="resources\payloadMock\v3\orderAck.xml" />
+    <None Remove="resources\payloadMock\v3\orderCancel.xml" />
+    <None Remove="resources\payloadMock\v3\orderRefund.xml" />
+    <None Remove="resources\payloadMock\v3\orderShipping.xml" />
+    <None Remove="resources\payloadMock\v3\refundOrder.xml" />
+    <None Remove="resources\payloadMock\v3\releasedOrders.xml" />
+    <None Remove="resources\payloadMock\v3\priceUpdated.xml" />
+    <None Remove="resources\payloadMock\v3\promotionPrice.xml" />
+    <None Remove="resources\payloadMock\v3\promotionView.xml" />
+    <None Remove="resources\payloadMock\v3\shipOrder.xml" />
+    <None Remove="resources\payloadMock\v3\uploadedFeed.xml" />
+    <None Remove="resources\payloadMock\_mapping.json" />
+    <EmbeddedResource Include="resources\payloadMock\v2\404_error.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v2\allOrders.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v2\itemInventory.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v2\itemRetire.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v2\itemsList.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v2\itemView.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v2\lagTime.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\payloadMock\v2\listAcknowledgedOrders.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\payloadMock\v2\listCancelledOrders.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\payloadMock\v2\listOrders.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\payloadMock\v2\listReleasedOrders.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\payloadMock\v2\listShippedOrders.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\payloadMock\v2\listSkuOrders.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\payloadMock\v2\order.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v2\orderAck.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v2\orderCancel.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v2\orderRefund.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v2\orderShipping.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v2\refundOrder.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\payloadMock\v2\releasedOrders.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v2\shipOrder.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\payloadMock\v2\priceUpdated.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\payloadMock\v2\uploadedFeed.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="resources\payloadMock\v2\feedStatus.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\payloadMock\v3\404_error.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v3\allFeedStatuses.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v3\allOrders.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v3\feedStatus.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\payloadMock\v3\itemRetire.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v3\itemsList.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v3\itemView.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v3\listAcknowledgedOrders.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\payloadMock\v3\listCancelledOrders.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\payloadMock\v3\listOrders.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\payloadMock\v3\listReleasedOrders.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\payloadMock\v3\listShippedOrders.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\payloadMock\v3\listSkuOrders.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\payloadMock\v3\order.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v3\orderAck.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v3\orderCancel.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v3\orderRefund.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v3\orderShipping.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v3\refundOrder.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\payloadMock\v3\releasedOrders.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v3\priceUpdated.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v3\promotionPrice.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v3\promotionView.xml" />
+    <EmbeddedResource Include="resources\payloadMock\v3\shipOrder.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\payloadMock\v3\uploadedFeed.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\payloadMock\_mapping.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Walmart.Sdk.Base\Walmart.Sdk.Base.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="V3\Payload\LagTime\" />
+    <Folder Include="V3\Payload\Promotion\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Price xmlns="http://walmart.com/">
+  <itemIdentifier>
+    <sku>promoSync3</sku>
+  </itemIdentifier>
+  <pricingList>
+    <pricing effectiveDate="2018-04-20T21:29:39.420Z" expirationDate="2018-04-27T21:29:39.420Z" processMode="UPSERT">
+      <currentPrice>
+        <value amount="35.00"/>
+      </currentPrice>
+      <currentPriceType>REDUCED</currentPriceType>
+      <comparisonPrice>
+        <value amount="97.00"/>
+      </comparisonPrice>
+    </pricing>
+    <pricing effectiveDate="2018-05-01T21:29:39.420Z" expirationDate="2018-05-10T21:29:39.420Z" processMode="UPSERT">
+      <currentPrice>
+        <value amount="44.00"/>
+      </currentPrice>
+    </pricing>
+  </pricingList>
+</Price>

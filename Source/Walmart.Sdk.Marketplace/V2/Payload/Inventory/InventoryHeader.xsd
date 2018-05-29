@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Schema for data exchanged between Walmart and its partners.
+  Copyright 2015 Walmart Corporation. All rights reserved.
+-->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://walmart.com/"
+  targetNamespace="http://walmart.com/"
+  elementFormDefault="qualified"
+  version="1.4">
+  
+  <xsd:element name="InventoryHeader" type="InventoryHeader"/>
+ 
+  <xsd:complexType name="InventoryHeader">
+    <xsd:sequence>
+      <xsd:element name="version" minOccurs="1" default="1.4">
+		    <xsd:annotation>
+		      <xsd:documentation>
+		        This indicates schema version associated with the XML payload
+		      </xsd:documentation>
+		    </xsd:annotation>
+		    <xsd:simpleType>
+		      <xsd:restriction base="xsd:string">
+			      <xsd:enumeration value="1.4" />
+          </xsd:restriction>
+		    </xsd:simpleType>
+      </xsd:element>
+      
+      <xsd:element name="feedDate" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Date after which the offer is no longer valid
+            The dateTime is specified in the following form "YYYY-MM-DDThh:mm:ss" where:
+              YYYY  indicates the year
+              MM    indicates the month
+              DD    indicates the day
+              T     indicates the start of the required time section
+              hh    indicates the hour
+              mm    indicates the minute
+              ss    indicates the second
+              Note: All components are required!
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>

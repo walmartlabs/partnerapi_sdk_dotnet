@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ns0:ItemRetireResponse xmlns:ns0="http://walmart.com/">
+  <ns0:sku>A170257H8J6W5491</ns0:sku>
+  <ns0:message>Thank you.  Your item has been submitted for retirement from Walmart Catalog.  Please note that it can take up to 48 hours for items to be retired from our catalog.</ns0:message>
+</ns0:ItemRetireResponse>

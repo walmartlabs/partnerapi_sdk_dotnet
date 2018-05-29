@@ -1,0 +1,6 @@
+﻿{
+  "GET_/": "404_error",
+  "POST_/": "404_error",
+  "DELETE_/": "404_error",
+  "PUT_/": "404_error"
+}

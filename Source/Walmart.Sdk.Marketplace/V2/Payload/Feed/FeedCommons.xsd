@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Schema for data exchanged between Walmart and its partners.
+  Copyright 2015 Walmart Corporation. All rights reserved.
+-->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://walmart.com/"
+  targetNamespace="http://walmart.com/"
+  elementFormDefault="qualified"
+  version="2.0">
+
+  <xsd:simpleType name="FeedStatus">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="RECEIVED" />
+      <xsd:enumeration value="INPROGRESS" />
+      <xsd:enumeration value="PROCESSED" />
+      <xsd:enumeration value="ERROR" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="ItemStatus">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="INPROGRESS" />
+      <xsd:enumeration value="SUCCESS" />
+      <xsd:enumeration value="DATA_ERROR" />
+      <xsd:enumeration value="SYSTEM_ERROR" />
+      <xsd:enumeration value="TIMEOUT_ERROR" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="ErrorType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="DATA_ERROR" />
+      <xsd:enumeration value="SYSTEM_ERROR" />
+      <xsd:enumeration value="TIMEOUT_ERROR" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="IngestionError">
+    <xsd:sequence>
+      <xsd:element name="type" type="ErrorType" minOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>
+            error type
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="code" type="xsd:string" minOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>
+            error code
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="description" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            textual description
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+</xsd:schema>

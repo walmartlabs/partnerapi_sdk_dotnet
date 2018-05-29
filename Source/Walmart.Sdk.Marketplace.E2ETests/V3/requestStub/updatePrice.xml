@@ -1,0 +1,12 @@
+﻿<Price xmlns="http://walmart.com/">
+  <itemIdentifier>
+    <sku>{{sku}}</sku>
+  </itemIdentifier>
+  <pricingList>
+    <pricing>
+      <currentPrice>
+        <value currency="{{currency}}" amount="{{price}}" />
+      </currentPrice>
+    </pricing>
+  </pricingList>
+</Price>

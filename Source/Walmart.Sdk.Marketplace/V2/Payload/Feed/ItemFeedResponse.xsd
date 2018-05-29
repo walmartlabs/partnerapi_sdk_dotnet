@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Schema for data exchanged between Walmart and its partners.
+  Copyright 2015 Walmart Corporation. All rights reserved.
+-->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://walmart.com/"
+    targetNamespace="http://walmart.com/"
+    elementFormDefault="qualified"
+    version="2.0">
+
+  <xsd:include schemaLocation="FeedCommons.xsd" />
+
+  <xsd:element name="ItemFeedResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="feedId" type="xsd:string" minOccurs="1">
+          <xsd:annotation>
+            <xsd:documentation>
+              UUID - a correlation id to partners so that they can query the status and response later for the feed
+            </xsd:documentation>
+          </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="feedStatus" type="FeedStatus" minOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>
+            overall status of the request. Item statuses are in items detail.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ingestionErrors" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            errors
+          </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ingestionError" type="IngestionError" minOccurs="0" maxOccurs="1000">
+          </xsd:element>
+        </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="itemsReceived" type="xsd:int" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            how many components were found in the feed
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="itemsSucceeded" type="xsd:int" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            how many items succeeded
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="itemsFailed" type="xsd:int" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            how many items ended in error, due to data error or system error, exact error type will be indicated by error code for the item
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="itemsProcessing" type="xsd:int" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            how many items are still being processed?
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="offset" type="xsd:int" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            index of the first item status being reported in this response, 0 based offset, used for response pagination of large feeds
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="limit" type="xsd:int" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            number of items being reported in this response, used for response pagination of large feeds
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="requestId" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            partner generated and provided ID of the feed
+          </xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="64"/>        
+            <xsd:minLength value="1"/>
+        </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="requestBatchId" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            partner generated and provided ID of the feed
+          </xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="64"/>
+            <xsd:minLength value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="additionalAttributes" type="MPNameValueAttributes" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            additional attributes bag, content will depend on partner type
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ItemDetails" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Indicates detailed response for the feed
+          </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ItemIngestionStatus" type="GenericItemIngestionStatus" minOccurs="0" maxOccurs="1000">
+	        </xsd:element>
+	      </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+   </xsd:complexType>
+  </xsd:element>
+
+  <xsd:complexType name="GenericItemIngestionStatus">
+    <xsd:sequence>
+      <xsd:element name="martId" type="xsd:int" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>
+              martId of the offer listing, 0 for the default mart for the tenant (tenant ID is in the header)
+            </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="sku" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+             may not be provided when SKU was not found in input data
+          </xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="255"/>
+            <xsd:minLength value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="productId" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            WPID
+          </xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="12"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="index" type="xsd:int" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            position of the item in the feed
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="additionalAttributes" type="MPNameValueAttributes" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            additional attributes bag, content will depend on partner type
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>      
+      <xsd:element name="ingestionStatus" type="ItemStatus" minOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ingestionErrors" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            ingestion errors
+          </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ingestionError" type="IngestionError" minOccurs="0" maxOccurs="1000">
+	        </xsd:element>
+	      </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="MPNameValueAttributes">
+    <xsd:sequence>
+      <xsd:element name="NameValueAttribute" type="MPNameValueAttribute" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+	  
+  <xsd:complexType name="MPNameValueAttribute">
+    <xsd:sequence>
+	    <xsd:element name="name" type="xsd:string" minOccurs="1">
+	      <xsd:annotation>
+	        <xsd:documentation>
+	          name
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="type" type="ValueType" minOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>
+            type
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="value" type="MPAttributeValue" minOccurs="1" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation>
+            Set of values for the attribute
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="MPAttributeValue">
+    <xsd:sequence>
+      <xsd:element name="value" type="xsd:string" minOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>
+            value expressed in string
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="group" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            list of values
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="rank" type="xsd:int" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            list of values
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:simpleType name="ValueType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="LOCALIZABLE_TEXT" />
+      <xsd:enumeration value="STRING" />
+      <xsd:enumeration value="BOOLEAN" />
+      <xsd:enumeration value="INTEGER" />
+      <xsd:enumeration value="DECIMAL" />
+      <xsd:enumeration value="DATE" />
+      <xsd:enumeration value="TIMESTAMP" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+</xsd:schema>

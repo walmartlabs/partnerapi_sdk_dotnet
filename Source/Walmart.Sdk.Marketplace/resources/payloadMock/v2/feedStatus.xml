@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PartnerFeedResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://walmart.com/">
+  <feedId>FDC5EDDA0A6A4C669FCDC8BF2973DA0A@AQkBAQA</feedId>
+  <feedStatus>PROCESSED</feedStatus>
+  <IngestionErrors />
+  <itemsReceived>6</itemsReceived>
+  <itemsSucceeded>6</itemsSucceeded>
+  <itemsFailed>0</itemsFailed>
+  <itemsProcessing>0</itemsProcessing>
+  <offset>0</offset>
+  <limit>50</limit>
+  <ItemDetails />
+</PartnerFeedResponse>

@@ -1,0 +1,16 @@
+﻿<Price xmlns="http://walmart.com/">
+  <itemIdentifier>
+    <sku>NETSDK_TEST</sku>
+  </itemIdentifier>
+  <pricingList>
+    <pricing>
+      <currentPrice>
+        <value currency="USD" amount="4.00" />
+      </currentPrice>
+      <currentPriceType>REDUCED</currentPriceType>
+      <comparisonPrice>
+        <value currency="USD" amount="5.99" />
+      </comparisonPrice>
+    </pricing>
+  </pricingList>
+</Price>

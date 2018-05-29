@@ -1,0 +1,124 @@
+
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <RootNamespace>Walmart.Sdk.Marketplace.Sample</RootNamespace>
+    <AssemblyName>Walmart.Sdk.Marketplace.Sample</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="App.config" />
+    <None Remove="Nuget.config" />
+    <None Remove="packages.config" />
+    <None Remove="startupMsg.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="defaultSettings.json" />
+    <EmbeddedResource Include="resources\startupMsg.txt" />
+  </ItemGroup>  
+  <ItemGroup>
+    <PackageReference Include="BouncyCastle.NetCore" Version="1.8.1.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
+    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="System.Runtime.Extensions" Version="4.3.0" />
+  </ItemGroup>  
+  <ItemGroup>
+    <Reference Include="Walmart.Sdk.Base">
+      <HintPath>..\Source\Walmart.Sdk.Marketplace\bin\Debug\netstandard1.3\Walmart.Sdk.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Walmart.Sdk.Marketplace">
+      <HintPath>..\Source\Walmart.Sdk.Marketplace\bin\Debug\netstandard1.3\Walmart.Sdk.Marketplace.dll</HintPath>
+    </Reference>
+  </ItemGroup>  
+  <ItemGroup>
+    <None Update="resources\requestExamples\v2\inventoryBulkFeed.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\requestExamples\v3\inventoryBulkFeed.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\responsePayload\error.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\responsePayload\error.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\responsePayload\_mapping.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="settings\settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\inventory\bulk.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\inventory\update.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\price\pricefeed.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\requestExamples\v2\cancelOrder.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\requestExamples\v2\inventoryFeed.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\requestExamples\v2\itemFeed.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\requestExamples\v2\priceBulkFeed.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\requestExamples\v2\priceFeed.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\requestExamples\v2\promoFeed.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\requestExamples\v2\refundOrder.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\requestExamples\v2\shippingOrder.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\requestExamples\v3\cancelOrder.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\requestExamples\v2\promotionUpdate.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\requestExamples\v3\inventoryFeed.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\requestExamples\v3\itemFeed.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\requestExamples\v3\priceBulkFeed.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\requestExamples\v3\priceFeed.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\requestExamples\v3\promoFeed.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\requestExamples\v3\refundOrder.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\requestExamples\v3\shippingOrder.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\requestExamples\v3\promotionUpdate.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

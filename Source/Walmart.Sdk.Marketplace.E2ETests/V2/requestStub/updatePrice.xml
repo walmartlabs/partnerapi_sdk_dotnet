@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ItemPriceResponse xmlns:ns2="http://walmart.com/">
+  <mart>WALMART_US</mart>
+  <sku>{{sku}}</sku>
+  <currency>USD</currency>
+  <amount>{{amount}}</amount>
+  <message>Thank you. Your price has been updated. Please allow up to five minutes for this change to be reflected on the site.</message>
+</ItemPriceResponse>

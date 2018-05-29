@@ -1,0 +1,28 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://walmart.com/"
+            targetNamespace="http://walmart.com/"
+            elementFormDefault="qualified"
+            version="1.4">
+
+<xsd:include schemaLocation="MPItemView.xsd" />
+
+    <xsd:element name="MPItemViews" type="MPItemViews"/>
+
+    <xsd:complexType name="MPItemViews">
+        <xsd:annotation>
+            <xsd:documentation>
+                MPItemViews
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="MPItemView" type="MPItemView" minOccurs="0" maxOccurs="unbounded">
+            <xsd:annotation>
+                    <xsd:documentation>
+                        MPItemView
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>

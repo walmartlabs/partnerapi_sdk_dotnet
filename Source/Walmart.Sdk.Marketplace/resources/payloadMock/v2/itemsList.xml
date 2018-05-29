@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:MPItemViews xmlns:ns2="http://walmart.com/">
+  <ns2:MPItemView>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>NETSDK_TEST</ns2:sku>
+    <ns2:wpid>3R8BBV0BIDN4</ns2:wpid>
+    <ns2:upc>716542110434</ns2:upc>
+    <ns2:gtin>00716542110434</ns2:gtin>
+    <ns2:productName>Powertec Workbench Multipress with Isolateral Arms</ns2:productName>
+    <ns2:productType>default</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>4000.00</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>UNPUBLISHED</ns2:publishedStatus>
+  </ns2:MPItemView>
+  <ns2:MPItemView>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>Prod-FGW-XXX</ns2:sku>
+    <ns2:wpid>1LE06SWCGMS7</ns2:wpid>
+    <ns2:gtin>04993811256253</ns2:gtin>
+    <ns2:productName>Hyperloop Prod-FGW-XXX - Test Item - Do Not Buy</ns2:productName>
+    <ns2:productType>Electric Motors</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>999999.99</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>UNPUBLISHED</ns2:publishedStatus>
+  </ns2:MPItemView>
+  <ns2:MPItemView>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>UBLBT-HPG62B44-16H03</ns2:sku>
+    <ns2:wpid>2FTL85BV1X8G</ns2:wpid>
+    <ns2:upc>715875436914</ns2:upc>
+    <ns2:gtin>00715875436914</ns2:gtin>
+    <ns2:productName>UBatteries Laptop Battery HP 1000 HP 2000 - 6 Cell, 4400mAh</ns2:productName>
+    <ns2:productType>Device-Specific Electronics Batteries</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>27.95</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>UNPUBLISHED</ns2:publishedStatus>
+  </ns2:MPItemView>
+  <ns2:MPItemView>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>04699503360474shampoo</ns2:sku>
+    <ns2:wpid>3P1BAN58BS6W</ns2:wpid>
+    <ns2:gtin>04699503360474</ns2:gtin>
+    <ns2:productName>Baby Shampoo Dummy GTIN</ns2:productName>
+    <ns2:productType>Baby Layette &amp; Gift Sets</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>5.90</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>PUBLISHED</ns2:publishedStatus>
+  </ns2:MPItemView>
+  <ns2:MPItemView>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>ORST355</ns2:sku>
+    <ns2:wpid>3U25KR14VUC2</ns2:wpid>
+    <ns2:upc>638448003545</ns2:upc>
+    <ns2:gtin>00638448003545</ns2:gtin>
+    <ns2:productName>Rubber Quad-Grip Olympic Plate Set (255 Lbs.)</ns2:productName>
+    <ns2:shelf>Sports &amp; Outdoors/Exercise &amp; Fitness/Strength &amp; Weight Training/Weights/Weight Plates &amp; Racks</ns2:shelf>
+    <ns2:productType>Weight Plates</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>675.00</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>UNPUBLISHED</ns2:publishedStatus>
+  </ns2:MPItemView>
+  <ns2:MPItemView>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>Prod-FGW-06112017</ns2:sku>
+    <ns2:wpid>25RJPTD2TE01</ns2:wpid>
+    <ns2:gtin>04692731327080</ns2:gtin>
+    <ns2:productName>TEST Radio Flyer Spin 'N Saucer Ride-On with Lights and Sounds</ns2:productName>
+    <ns2:productType>Push &amp; Pedal Ride-Ons</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>24.97</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>PUBLISHED</ns2:publishedStatus>
+  </ns2:MPItemView>
+  <ns2:MPItemView>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>8157309</ns2:sku>
+    <ns2:wpid>3RAWXBZ9J6K1</ns2:wpid>
+    <ns2:upc>883049059839</ns2:upc>
+    <ns2:gtin>00883049059839</ns2:gtin>
+    <ns2:productName>Apple iPod touch 16GB</ns2:productName>
+    <ns2:productType>Digital Audio Players</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>187.00</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>UNPUBLISHED</ns2:publishedStatus>
+  </ns2:MPItemView>
+  <ns2:MPItemView>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>JBC601C9O-255W</ns2:sku>
+    <ns2:wpid>1DTEMLU0A823</ns2:wpid>
+    <ns2:gtin>04713072774415</ns2:gtin>
+    <ns2:productName>Jetway JBC601C9O-255WB Black Mini-Top Barebone, Intel Atom Dual-Core D2550 CPU, Max. 4GB RAM WiFi, SD card slot, VESA Mount included</ns2:productName>
+    <ns2:productType>Desktop Computers</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>44.00</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>PUBLISHED</ns2:publishedStatus>
+  </ns2:MPItemView>
+  <ns2:MPItemView>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>UBLBT-HPG62B44-16H01</ns2:sku>
+    <ns2:wpid>380728YUVLMW</ns2:wpid>
+    <ns2:upc>715875436891</ns2:upc>
+    <ns2:gtin>00715875436891</ns2:gtin>
+    <ns2:productName>UBatteries Laptop Battery Compaq Presario CQ32 CQ42 CQ43 CQ56 CQ62 - 6 Cell, 4400mAh</ns2:productName>
+    <ns2:productType>Device-Specific Electronics Batteries</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>27.95</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>PUBLISHED</ns2:publishedStatus>
+  </ns2:MPItemView>
+  <ns2:MPItemView>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>00815706021347-SKU1</ns2:sku>
+    <ns2:wpid>2ZUS314ZPI40</ns2:wpid>
+    <ns2:upc>815706021347</ns2:upc>
+    <ns2:gtin>00815706021347</ns2:gtin>
+    <ns2:productName>Zoku ZK142-SS Stainless Bottle, 18oz, Silver</ns2:productName>
+    <ns2:productType>Thermoses</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>19.99</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>UNPUBLISHED</ns2:publishedStatus>
+  </ns2:MPItemView>
+  <ns2:MPItemView>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>WB-MP16</ns2:sku>
+    <ns2:wpid>2JYWP4NH2705</ns2:wpid>
+    <ns2:upc>716542109360</ns2:upc>
+    <ns2:gtin>00716542109360</ns2:gtin>
+    <ns2:productName>Powertec WB-MP16 Multi Press</ns2:productName>
+    <ns2:productType>Weight Benches</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>749.99</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>PUBLISHED</ns2:publishedStatus>
+  </ns2:MPItemView>
+  <ns2:MPItemView>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>8081052</ns2:sku>
+    <ns2:wpid>3I2YUVOP6DHH</ns2:wpid>
+    <ns2:upc>845226010101</ns2:upc>
+    <ns2:gtin>00845226010101</ns2:gtin>
+    <ns2:productName>VIZIO E420i-B0 42&quot; 1080p 120Hz LED Smart TV HDTV</ns2:productName>
+    <ns2:productType>Televisions</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>428.00</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>UNPUBLISHED</ns2:publishedStatus>
+  </ns2:MPItemView>
+  <ns2:MPItemView>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>CustomSkuGtin3</ns2:sku>
+    <ns2:wpid>48Y86IXBI5K7</ns2:wpid>
+    <ns2:gtin>04691911579097</ns2:gtin>
+    <ns2:productName>Sterling Silver Blue Diamond Heart Pendant-Necklace with an 18in Chain</ns2:productName>
+    <ns2:productType>Necklaces</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>24.99</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>PUBLISHED</ns2:publishedStatus>
+  </ns2:MPItemView>
+  <ns2:MPItemView>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>SP1000</ns2:sku>
+    <ns2:wpid>3TNS052NVGZL</ns2:wpid>
+    <ns2:upc>855959000065</ns2:upc>
+    <ns2:gtin>00855959000065</ns2:gtin>
+    <ns2:productName>LifeSpan Stretch Partner Bench</ns2:productName>
+    <ns2:shelf>Sports &amp; Outdoors/Exercise &amp; Fitness/Exercise Machines/Home Gyms</ns2:shelf>
+    <ns2:productType>Weight Benches</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>495.00</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>PUBLISHED</ns2:publishedStatus>
+  </ns2:MPItemView>
+  <ns2:MPItemView>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>8480146</ns2:sku>
+    <ns2:wpid>3WVJMS5EK0QR</ns2:wpid>
+    <ns2:upc>045496881627</ns2:upc>
+    <ns2:gtin>00045496881627</ns2:gtin>
+    <ns2:productName>Wii U 32GB Black Deluxe Set</ns2:productName>
+    <ns2:productType>Video Game Consoles</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>299.99</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>UNPUBLISHED</ns2:publishedStatus>
+  </ns2:MPItemView>
+  <ns2:MPItemView>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>34969088</ns2:sku>
+    <ns2:wpid>2PWSRIVMSAW5</ns2:wpid>
+    <ns2:upc>877991025783</ns2:upc>
+    <ns2:gtin>00877991025783</ns2:gtin>
+    <ns2:productName>ScentSational Mosaic Wax Warmer, Monroe</ns2:productName>
+    <ns2:productType>Wax Warmers</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>15.30</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>UNPUBLISHED</ns2:publishedStatus>
+  </ns2:MPItemView>
+  <ns2:MPItemView>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>8029623</ns2:sku>
+    <ns2:wpid>2E7CFAR9ZZUW</ns2:wpid>
+    <ns2:upc>885909772148</ns2:upc>
+    <ns2:gtin>00885909772148</ns2:gtin>
+    <ns2:productName>Apple iPad Air 16GB with Wi-Fi Black - Grade A Refurbished</ns2:productName>
+    <ns2:productType>Tablet Computers</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>4.00</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>UNPUBLISHED</ns2:publishedStatus>
+  </ns2:MPItemView>
+  <ns2:MPItemView>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>9999_wei_88</ns2:sku>
+    <ns2:wpid>2CR58YH80TOT</ns2:wpid>
+    <ns2:productName>Product Name for Shared GMP and Merchant Center Use Case MP1.X</ns2:productName>
+    <ns2:productType>default</ns2:productType>
+    <ns2:publishedStatus>UNPUBLISHED</ns2:publishedStatus>
+  </ns2:MPItemView>
+  <ns2:MPItemView>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>35876875</ns2:sku>
+    <ns2:wpid>28NG091IH4QP</ns2:wpid>
+    <ns2:upc>012914216507</ns2:upc>
+    <ns2:gtin>00012914216507</ns2:gtin>
+    <ns2:productName>Summer Infant 3D Lite Stroller</ns2:productName>
+    <ns2:productType>Baby Strollers</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>79.99</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>UNPUBLISHED</ns2:publishedStatus>
+  </ns2:MPItemView>
+  <ns2:MPItemView>
+    <ns2:mart>WALMART_US</ns2:mart>
+    <ns2:sku>P001</ns2:sku>
+    <ns2:wpid>3PDT3T8MTODI</ns2:wpid>
+    <ns2:gtin>78350426113671</ns2:gtin>
+    <ns2:productName>Super-Duper Electronic Cable</ns2:productName>
+    <ns2:productType>Computer Cables</ns2:productType>
+    <ns2:price>
+      <ns2:currency>USD</ns2:currency>
+      <ns2:amount>70.00</ns2:amount>
+    </ns2:price>
+    <ns2:publishedStatus>PUBLISHED</ns2:publishedStatus>
+  </ns2:MPItemView>
+</ns2:MPItemViews>

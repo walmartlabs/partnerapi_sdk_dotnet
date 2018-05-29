@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ns2:orderRefund xmlns:ns2="http://walmart.com/mp/v2/orders" xmlns:ns3="http://walmart.com/">
+  <ns2:purchaseOrderId>2575193093772</ns2:purchaseOrderId>
+  <ns2:orderLines>
+    <ns2:orderLine>
+      <ns2:lineNumber>1</ns2:lineNumber>
+      <ns2:refunds>
+        <ns2:refund>
+          <ns2:refundComments>test test</ns2:refundComments>
+          <ns2:refundCharges>
+            <ns2:refundCharge>
+              <ns2:refundReason>DamagedItem</ns2:refundReason>
+              <ns2:charge>
+                <ns2:chargeType>PRODUCT</ns2:chargeType>
+                <ns2:chargeName>Item Price</ns2:chargeName>
+                <ns2:chargeAmount>
+                  <ns2:currency>USD</ns2:currency>
+                  <ns2:amount>-10.02</ns2:amount>
+                </ns2:chargeAmount>
+                <ns2:tax>
+                  <ns2:taxName>Item Price Tax</ns2:taxName>
+                  <ns2:taxAmount>
+                    <ns2:currency>USD</ns2:currency>
+                    <ns2:amount>-5.03</ns2:amount>
+                  </ns2:taxAmount>
+                </ns2:tax>
+              </ns2:charge>
+            </ns2:refundCharge>
+            <ns2:refundCharge>
+              <ns2:refundReason>TaxExemptCustomer</ns2:refundReason>
+              <ns2:charge>
+                <ns2:chargeType>SHIPPING</ns2:chargeType>
+                <ns2:chargeName>Shipping Price</ns2:chargeName>
+                <ns2:chargeAmount>
+                  <ns2:currency>USD</ns2:currency>
+                  <ns2:amount>-1.02</ns2:amount>
+                </ns2:chargeAmount>
+                <ns2:tax>
+                  <ns2:taxName>Shipping Tax</ns2:taxName>
+                  <ns2:taxAmount>
+                    <ns2:currency>USD</ns2:currency>
+                    <ns2:amount>-0.05</ns2:amount>
+                  </ns2:taxAmount>
+                </ns2:tax>
+              </ns2:charge>
+            </ns2:refundCharge>
+          </ns2:refundCharges>
+        </ns2:refund>
+      </ns2:refunds>
+    </ns2:orderLine>
+  </ns2:orderLines>
+</ns2:orderRefund>
