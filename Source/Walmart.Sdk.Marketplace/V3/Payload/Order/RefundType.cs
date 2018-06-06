@@ -38,7 +38,8 @@ namespace Walmart.Sdk.Marketplace.V3.Payload.Order
         public string RefundId { get; set; }
         [XmlElement("refundComments")]
         public string RefundComments { get; set; }
-        [XmlArrayItemAttribute("refundCharge", IsNullable=false, ElementName="refundCharges")]
+        [XmlArrayItemAttribute("refundCharge", IsNullable = false)]
+        [XmlArray("refundCharges")]
         public List<RefundChargeType> RefundCharges { get; set; }
     
         /// <summary>

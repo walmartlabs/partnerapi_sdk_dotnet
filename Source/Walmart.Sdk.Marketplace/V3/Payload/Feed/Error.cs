@@ -44,7 +44,8 @@ namespace Walmart.Sdk.Marketplace.V3.Payload.Feed
         public ErrorSeverity Severity { get; set; }
         [XmlElement("category")]
         public ErrorCategory Category { get; set; }
-        [XmlArrayItemAttribute(IsNullable=false, ElementName="causes")]
+        [XmlArrayItemAttribute("cause", IsNullable = false)]
+        [XmlArray("causes")]
         public List<Cause> Causes { get; set; }
         [XmlElement("errorIdentifiers")]
         public object ErrorIdentifiers { get; set; }

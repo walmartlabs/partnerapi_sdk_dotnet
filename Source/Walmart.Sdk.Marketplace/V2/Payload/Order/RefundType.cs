@@ -23,6 +23,7 @@ limitations under the License.
 namespace Walmart.Sdk.Marketplace.V2.Payload.Order
 {
     using System;
+    using System.Collections.Generic;
     using System.Xml.Serialization;
     using Walmart.Sdk.Base.Primitive;
 
@@ -39,15 +40,16 @@ namespace Walmart.Sdk.Marketplace.V2.Payload.Order
         public ReasonCodesType RefundReason { get; set; }
         [XmlElement("refundComments")]
         public string RefundComments { get; set; }
-        [XmlElement("charges", IsNullable = false)]
-        public ChargesList Charges { get; set; }
+        [XmlArrayItemAttribute("charge", IsNullable = false)]
+        [XmlArray("charges")]
+        public List<V2.Payload.Order.OneChargeType> Charges { get; set; }
 
         /// <summary>
         /// RefundType class constructor
         /// </summary>
         public RefundType()
         {
-            Charges = new ChargesList();
+            Charges = new List<V2.Payload.Order.OneChargeType>();
         }
     }
 }

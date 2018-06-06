@@ -20,7 +20,7 @@ limitations under the License.
 //  </auto-generated>
 // ------------------------------------------------------------------------------
 
-namespace Walmart.Sdk.Marketplace.V3.Payload.Order
+namespace Walmart.Sdk.Marketplace.V2.Payload.Order
 {
     using System;
     using System.Xml.Serialization;
@@ -29,12 +29,14 @@ namespace Walmart.Sdk.Marketplace.V3.Payload.Order
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Xsd2Code", "4.4.0.7")]
     [Serializable]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [XmlTypeAttribute(Namespace="http://walmart.com/mp/v3/orders", TypeName="chargeType")]
+    [XmlTypeAttribute(Namespace="http://walmart.com/mp/orders", TypeName="chargeType")]
     [XmlRootAttribute("chargeType")]
-    public class ChargeType : BasePayload
+
+    // use OneChargeType name to avoid collision with property name (can't be same as class name)
+    public class OneChargeType : BasePayload
     {
-        [XmlElement("chargeType", ElementName="chargeType1")]
-        public string ChargeType1 { get; set; }
+        [XmlElement("chargeType")]
+        public string ChargeType { get; set; }
         [XmlElement("chargeName")]
         public string ChargeName { get; set; }
         [XmlElement("chargeAmount")]
@@ -45,7 +47,7 @@ namespace Walmart.Sdk.Marketplace.V3.Payload.Order
         /// <summary>
         /// ChargeType class constructor
         /// </summary>
-        public ChargeType()
+        public OneChargeType()
         {
             Tax = new TaxType();
             ChargeAmount = new MoneyType();

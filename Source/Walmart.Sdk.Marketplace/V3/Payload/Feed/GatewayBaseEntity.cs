@@ -31,7 +31,8 @@ namespace Walmart.Sdk.Marketplace.V3.Payload.Feed
     [XmlRootAttribute("gatewayBaseEntity")]
     public class GatewayBaseEntity : BasePayload
     {
-        [XmlArrayItemAttribute("error", IsNullable=false, ElementName="errors")]
+        [XmlArrayItemAttribute("error", IsNullable = false)]
+        [XmlArray("errors")]
         public List<GatewayError> Errors { get; set; }
     
         /// <summary>

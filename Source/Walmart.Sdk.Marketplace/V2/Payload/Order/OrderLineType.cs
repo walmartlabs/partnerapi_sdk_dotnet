@@ -28,75 +28,6 @@ namespace Walmart.Sdk.Marketplace.V2.Payload.Order
     using System.Collections.Generic;
     using Walmart.Sdk.Base.Primitive;
 
-    [XmlTypeAttribute(Namespace = "http://walmart.com/mp/orders", TypeName = "chargesType")]
-    [XmlRootAttribute("charges", Namespace = "http://walmart.com/mp/orders", IsNullable = false)]
-    public class ChargesList : BasePayload, IEnumerable<ChargeType>
-    {
-        [XmlElement("charge")]
-        public List<ChargeType> Charges { get; set; }
-
-        public ChargesList()
-        {
-            Charges = new List<ChargeType>();
-        }
-
-        public ChargeType this[int index]
-        {
-            get { return Charges[index]; }
-            set { Charges[index] = value; }
-        }
-
-        public IEnumerator<ChargeType> GetEnumerator()
-        {
-            return Charges.GetEnumerator();
-        }
-
-        public void Add(ChargeType item)
-        {
-            Charges.Add(item);
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
-
-    }
-
-    [XmlTypeAttribute(Namespace = "http://walmart.com/mp/orders", TypeName = "orderLineStatusesType")]
-    [XmlRootAttribute("orderLineStatuses", Namespace = "http://walmart.com/mp/orders", IsNullable = false)]
-    public class OrderLineStatuses : BasePayload, IEnumerable<OrderLineStatusType>
-    {
-        [XmlElement("orderLineStatus")]
-        public List<OrderLineStatusType> LineStatuses { get; set; }
-
-        public OrderLineStatuses()
-        {
-            LineStatuses = new List<OrderLineStatusType>();
-        }
-
-        public OrderLineStatusType this[int index]
-        {
-            get { return LineStatuses[index]; }
-            set { LineStatuses[index] = value; }
-        }
-
-        public IEnumerator<OrderLineStatusType> GetEnumerator()
-        {
-            return LineStatuses.GetEnumerator();
-        }
-
-        public void Add(OrderLineStatusType item)
-        {
-            LineStatuses.Add(item);
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
-    }
-
     /// <summary>
     /// Start of Orderline info and
     /// statuses Line status
@@ -116,15 +47,17 @@ namespace Walmart.Sdk.Marketplace.V2.Payload.Order
         [XmlElement("item")]
         public ItemType Item { get; set; }
 
-        [XmlElement("charges", IsNullable=false)]
-        public ChargesList Charges { get; set; }
+        [XmlArrayItemAttribute("charge", IsNullable = false)]
+        [XmlArray("charges")]
+        public List<V2.Payload.Order.OneChargeType> Charges { get; set; }
 
         [XmlElement("orderLineQuantity")]
         public QuantityType OrderLineQuantity { get; set; }
         [XmlElement("statusDate")]
         public System.DateTime StatusDate { get; set; }
-        [XmlElement("orderLineStatuses")]
-        public OrderLineStatuses OrderLineStatuses { get; set; }
+        [XmlArrayItemAttribute("orderLineStatus", IsNullable = false)]
+        [XmlArray("orderLineStatuses")]
+        public List<V2.Payload.Order.OrderLineStatusType> OrderLineStatuses { get; set; }
         [XmlElement("refund")]
         public RefundType Refund { get; set; }
     
@@ -134,9 +67,9 @@ namespace Walmart.Sdk.Marketplace.V2.Payload.Order
         public OrderLineType()
         {
             Refund = new RefundType();
-            OrderLineStatuses = new OrderLineStatuses();
+            OrderLineStatuses = new List<V2.Payload.Order.OrderLineStatusType>();
             OrderLineQuantity = new QuantityType();
-            Charges = new ChargesList();
+            Charges = new List<V2.Payload.Order.OneChargeType>();
             Item = new ItemType();
         }
     }

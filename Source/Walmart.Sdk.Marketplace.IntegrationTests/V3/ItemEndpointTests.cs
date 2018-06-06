@@ -17,7 +17,6 @@ limitations under the License.
 namespace Walmart.Sdk.Marketplace.IntegrationTests.V3
 {
     using System.Threading.Tasks;
-    using Walmart.Sdk.Marketplace.V3.Payload.Item;
     using Walmart.Sdk.Marketplace.V3.Payload.Feed;
     using Xunit;
 

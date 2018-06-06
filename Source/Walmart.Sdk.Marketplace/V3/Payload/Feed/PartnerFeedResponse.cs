@@ -45,7 +45,8 @@ namespace Walmart.Sdk.Marketplace.V3.Payload.Feed
         /// <summary>
         /// errors
         /// </summary>
-        [XmlArrayItemAttribute("ingestionError", IsNullable=false, ElementName="ingestionErrors")]
+        [XmlArrayItemAttribute("ingestionError", IsNullable = false)]
+        [XmlArray("ingestionErrors")]
         public List<IngestionError> IngestionErrors { get; set; }
         /// <summary>
         /// how many components were found in the feed

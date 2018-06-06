@@ -36,14 +36,14 @@ namespace Walmart.Sdk.Marketplace.V3.Payload.Order
         [XmlElement("refundReason")]
         public ReasonCodesType RefundReason { get; set; }
         [XmlElement("charge")]
-        public ChargeType Charge { get; set; }
+        public OneChargeType Charge { get; set; }
     
         /// <summary>
         /// RefundChargeType class constructor
         /// </summary>
         public RefundChargeType()
         {
-            Charge = new ChargeType();
+            Charge = new OneChargeType();
         }
     }
 }

@@ -30,75 +30,6 @@ namespace Walmart.Sdk.Marketplace.V3.Payload.Order
     using System.Collections;
     using Walmart.Sdk.Base.Primitive;
 
-    [XmlTypeAttribute(Namespace = "http://walmart.com/mp/v3/orders", TypeName = "chargesType")]
-    [XmlRootAttribute("charges", Namespace = "http://walmart.com/mp/v3/orders", IsNullable = false)]
-    public class ChargesList : BasePayload, IEnumerable<V3.Payload.Order.ChargeType>
-    {
-        [XmlElement("charge")]
-        public List<V3.Payload.Order.ChargeType> Charges { get; set; }
-
-        public ChargesList()
-        {
-            Charges = new List<V3.Payload.Order.ChargeType>();
-        }
-
-        public V3.Payload.Order.ChargeType this[int index]
-        {
-            get { return Charges[index]; }
-            set { Charges[index] = value; }
-        }
-
-        public IEnumerator<V3.Payload.Order.ChargeType> GetEnumerator()
-        {
-            return Charges.GetEnumerator();
-        }
-
-        public void Add(V3.Payload.Order.ChargeType item)
-        {
-            Charges.Add(item);
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
-
-    }
-
-    [XmlTypeAttribute(Namespace = "http://walmart.com/mp/v3/orders", TypeName = "orderLineStatusesType")]
-    [XmlRootAttribute("orderLineStatuses", Namespace = "http://walmart.com/mp/v3/orders", IsNullable = false)]
-    public class OrderLineStatuses : BasePayload, IEnumerable<V3.Payload.Order.OrderLineStatusType>
-    {
-        [XmlElement("orderLineStatus")]
-        public List<V3.Payload.Order.OrderLineStatusType> LineStatuses { get; set; }
-
-        public OrderLineStatuses()
-        {
-            LineStatuses = new List<V3.Payload.Order.OrderLineStatusType>();
-        }
-
-        public V3.Payload.Order.OrderLineStatusType this[int index]
-        {
-            get { return LineStatuses[index]; }
-            set { LineStatuses[index] = value; }
-        }
-
-        public IEnumerator<V3.Payload.Order.OrderLineStatusType> GetEnumerator()
-        {
-            return LineStatuses.GetEnumerator();
-        }
-
-        public void Add(V3.Payload.Order.OrderLineStatusType item)
-        {
-            LineStatuses.Add(item);
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
-    }
-
     /// <summary>
     /// Start of Orderline info and
     /// statuses Line status
@@ -120,14 +51,16 @@ namespace Walmart.Sdk.Marketplace.V3.Payload.Order
         public string LineNumber { get; set; }
         [XmlElement("item")]
         public ItemType Item { get; set; }
-        [XmlElement("charges", IsNullable = false)]
-        public ChargesList Charges { get; set; }
+        [XmlArrayItemAttribute("charge", IsNullable = false)]
+        [XmlArray("charges")]
+        public List<V3.Payload.Order.OneChargeType> Charges { get; set; }
         [XmlElement("orderLineQuantity")]
         public QuantityType OrderLineQuantity { get; set; }
         [XmlElement("statusDate")]
         public System.DateTime StatusDate { get; set; }
-        [XmlElement("orderLineStatuses")]
-        public OrderLineStatuses OrderLineStatuses { get; set; }
+        [XmlArrayItemAttribute("orderLineStatus", IsNullable = false)]
+        [XmlArray("orderLineStatuses")]
+        public List<V3.Payload.Order.OrderLineStatusType> OrderLineStatuses { get; set; }
         [XmlElement("refund")]
         public RefundType Refund { get; set; }
         [XmlElement("originalCarrierMethod")]
@@ -144,9 +77,9 @@ namespace Walmart.Sdk.Marketplace.V3.Payload.Order
         {
             Fulfillment = new FulfillmentType();
             Refund = new RefundType();
-            OrderLineStatuses = new OrderLineStatuses();
+            OrderLineStatuses = new List<V3.Payload.Order.OrderLineStatusType>();
             OrderLineQuantity = new QuantityType();
-            Charges = new ChargesList();
+            Charges = new List<V3.Payload.Order.OneChargeType>();
             Item = new ItemType();
         }
     }

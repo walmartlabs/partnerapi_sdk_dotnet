@@ -46,7 +46,12 @@ namespace Walmart.Sdk.Marketplace.IntegrationTests.V3
             // it's very easy to screw up deserialization of these objects
             // so make sure they were parsed correctly
             Assert.True(result.OrderLines.Lines[0].Charges.Count() > 0);
+            Assert.True(result.OrderLines.Lines[0].Charges[0].ChargeName.Length > 0);
+            Assert.True(result.OrderLines.Lines[0].Charges[0].ChargeType.Length > 0);
             Assert.True(result.OrderLines.Lines[0].OrderLineStatuses.Count() > 0);
+            Assert.True(result.OrderLines.Lines[0].OrderLineStatuses[0].Status == OrderLineStatusValueType.Acknowledged);
+            Assert.True(result.OrderLines.Lines[0].OrderLineStatuses[0].StatusQuantity.Amount.Length > 0);
+            Assert.True(result.OrderLines.Lines[0].OrderLineStatuses[0].StatusQuantity.UnitOfMeasurement.Length > 0);
         }
 
         [Fact]
