@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Walmart.Sdk.Marketplace</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <title>.NET SDK for Walmart Marketplace API</title>
     <authors>Ironman team</authors>
     <projectUrl>https://developer.walmart.com</projectUrl>

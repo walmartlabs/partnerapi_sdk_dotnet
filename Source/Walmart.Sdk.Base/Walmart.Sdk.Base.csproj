@@ -12,6 +12,11 @@
     <EmitEntryPoint>true</EmitEntryPoint>
     <ApplicationIcon />
     <StartupObject />
+    <Version>1.0.1</Version>
+    <Company>Walmart</Company>
+    <Authors />
+    <PackageProjectUrl>https://developer.walmart.com/#/home</PackageProjectUrl>
+    <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">

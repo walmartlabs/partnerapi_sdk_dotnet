@@ -1,7 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.3</TargetFramework> 
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <Version>1.0.1</Version>
+    <Company>Walmart</Company>
+    <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+    <PackageProjectUrl>https://developer.walmart.com/#/home</PackageProjectUrl>
+    <Authors></Authors> 
   </PropertyGroup>
 
   <ItemGroup>

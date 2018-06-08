@@ -183,11 +183,11 @@
       <HintPath>packages\System.Xml.XmlDocument.4.3.0\lib\net46\System.Xml.XmlDocument.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Walmart.Sdk.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Walmart.Sdk.Base, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Source\Walmart.Sdk.Marketplace\bin\Debug\netstandard1.3\Walmart.Sdk.Base.dll</HintPath>
     </Reference>
-    <Reference Include="Walmart.Sdk.Marketplace, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Walmart.Sdk.Marketplace, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Source\Walmart.Sdk.Marketplace\bin\Debug\netstandard1.3\Walmart.Sdk.Marketplace.dll</HintPath>
     </Reference>
