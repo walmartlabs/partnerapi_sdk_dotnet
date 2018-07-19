@@ -26,6 +26,7 @@ namespace Walmart.Sdk.Marketplace.V3.Api.Request
         public string Sku;
         public string CustomerOrderId;
         public string PurchaseOrderId;
+        public string ShipNode;
         public OrderLineStatusValueType? Status;
         public DateTime? CreatedStartDate;
         public DateTime? CreatedEndDate;
@@ -38,6 +39,7 @@ namespace Walmart.Sdk.Marketplace.V3.Api.Request
             if (!String.IsNullOrEmpty(Sku)) request.QueryParams.Add("sku", Sku);
             if (!String.IsNullOrEmpty(CustomerOrderId)) request.QueryParams.Add("customerOrderId", CustomerOrderId);
             if (!String.IsNullOrEmpty(PurchaseOrderId)) request.QueryParams.Add("purchaseOrderId", PurchaseOrderId);
+            if (!String.IsNullOrEmpty(ShipNode)) request.QueryParams.Add("shipNode", ShipNode);
             if (Status != null) request.QueryParams.Add("status", Status.ToString());
             if (CreatedStartDate != null) request.QueryParams.Add("createdStartDate", CreatedStartDate?.ToString("yyyy-MM-dd"));
             if (CreatedEndDate != null) request.QueryParams.Add("createdEndDate", CreatedEndDate?.ToString("yyyy-MM-dd"));
