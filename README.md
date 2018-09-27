@@ -41,11 +41,18 @@ docker run -it -v <folder-with-creds>:/app/settings <image-name>
 ```
 
 Example:
+
+Check out the source code of this repo in any folder, for example `/Users/test/WalmartMarketplaceClient`, then execute
 ```bash
-unzip WalmartMarketplaceClient.zip # in any folder, i.e /Users//test
-cd /Users//test/WalmartMarketplaceClient/Sample
+cd /Users/test/WalmartMarketplaceClient/
 docker build -t partnerapi-app .
-docker run -v $(pwd)/settings:/app/settings -it partnerapi-app
+```
+You need to place your API creds as "credentials.json" file in the folder `/Users/test/WalmartMarketplaceClient/settings`.
+ You can read more about this file [here](Sample/README.md)
+
+Execute the following command to start Sample application 
+```bash
+docker run -v $(pwd)/settings:/app/settings -it partnerapi-app 
 ```
 
 ## Code Snippets
