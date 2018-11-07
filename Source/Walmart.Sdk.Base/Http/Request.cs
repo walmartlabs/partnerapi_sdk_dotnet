@@ -16,6 +16,7 @@ limitations under the License.
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
 using System.Text;
 using System.Threading;
@@ -64,6 +65,14 @@ namespace Walmart.Sdk.Base.Http
         public void AddPayload(string payload)
         {
             HttpRequest.Content = new StringContent((string)payload, Encoding.UTF8, GetContentType());
+        }
+
+        public void AddPayload(Stream stream)
+        {
+            using (var reader = new StreamReader(stream))
+            {
+                HttpRequest.Content = new StringContent(reader.ReadToEnd(), Encoding.UTF8, GetContentType());
+            }
         }
 
         public string BuildQueryParams()

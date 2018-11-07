@@ -136,7 +136,7 @@ namespace Walmart.Sdk.Marketplace.V3.Api
             
             if (stream != null)
             {
-                request.AddMultipartContent(stream);
+                request.AddPayload(stream);
             }
             request.EndpointUri = String.Format("/v3/orders/{0}/{1}", purchaseOrderId, action);
             var response = await client.PostAsync(request);
@@ -158,7 +158,7 @@ namespace Walmart.Sdk.Marketplace.V3.Api
             // to avoid deadlock if this method is executed synchronously
             await new ContextRemover();
 
-            var response = await UpdateOrder(purchaseOrderId, OrderAction.Cancel);
+            var response = await UpdateOrder(purchaseOrderId, OrderAction.Cancel, stream);
             var result = await ProcessResponse<Order>(response);
             return result;
         }
@@ -168,7 +168,7 @@ namespace Walmart.Sdk.Marketplace.V3.Api
             // to avoid deadlock if this method is executed synchronously
             await new ContextRemover();
 
-            var response = await UpdateOrder(purchaseOrderId, OrderAction.Refund);
+            var response = await UpdateOrder(purchaseOrderId, OrderAction.Refund, stream);
             var result = await ProcessResponse<Order>(response);
             return result;
         }
@@ -178,7 +178,7 @@ namespace Walmart.Sdk.Marketplace.V3.Api
             // to avoid deadlock if this method is executed synchronously
             await new ContextRemover();
 
-            var response = await UpdateOrder(purchaseOrderId, OrderAction.Shipping);
+            var response = await UpdateOrder(purchaseOrderId, OrderAction.Shipping, stream);
             var result = await ProcessResponse<Order>(response);
             return result;
         }
