@@ -112,12 +112,14 @@ namespace Walmart.Sdk.Marketplace.V3.Api
         {
             // to avoid deadlock if this method is executed synchronously
             await new ContextRemover();
+            var request = CreateRequest();
 
             string action = "";
             switch (desiredAction)
             {
                 case OrderAction.Ack:
                     action = "acknowledge";
+                    request.AddPayload(string.Empty);
                     break;
                 case OrderAction.Cancel:
                     action = "cancel";
@@ -131,7 +133,7 @@ namespace Walmart.Sdk.Marketplace.V3.Api
                 default:
                     throw new Base.Exception.InvalidValueException("Unknown order action provided >" + action.ToString() + "<");
             }
-            var request = CreateRequest();
+            
             if (stream != null)
             {
                 request.AddMultipartContent(stream);
