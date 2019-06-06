@@ -26,7 +26,7 @@ namespace Walmart.Sdk.Marketplace.IntegrationTests.V2
 
         public PriceEndpointTests()
         {
-            var config = new Marketplace.ClientConfig("test", "test-key");
+            var config = new Marketplace.ClientConfig("test", "test-key", "test");
             var apiClient = new Marketplace.ApiClient(config);
             apiClient.SimulationEnabled = true;
             priceApi = new Marketplace.V2.Api.PriceEndpoint(apiClient);

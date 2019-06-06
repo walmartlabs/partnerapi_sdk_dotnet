@@ -31,7 +31,7 @@ namespace Walmart.Sdk.Marketplace.IntegrationTests.V2
         
         public LagTimeEndpointTests()
         {
-            var config = new ClientConfig("test", "test-key");
+            var config = new ClientConfig("test", "test-key", "test");
             var apiClient = new ApiClient(config);
             apiClient.SimulationEnabled = true;
             lagtimeApi = new LagTimeEndpoint(apiClient);

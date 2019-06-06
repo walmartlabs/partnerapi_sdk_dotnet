@@ -23,7 +23,7 @@ namespace Walmart.Sdk.Base.Test.Http
         [Fact]
         public void FetcherCreatedOnlyOnce()
         {
-            var config = new Primitive.BaseConfig("test", "test");
+            var config = new Primitive.BaseConfig("test", "test", "test");
             config.BaseUrl = "http://www.test.com";
             config.RequestTimeoutMs = 1000;
 

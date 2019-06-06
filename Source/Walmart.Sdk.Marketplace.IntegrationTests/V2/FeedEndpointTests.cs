@@ -33,7 +33,7 @@ namespace Walmart.Sdk.Marketplace.IntegrationTests.V2
 
         public FeedEndpointTests()
         {
-            var config = new Marketplace.ClientConfig("test", "test-key");
+            var config = new Marketplace.ClientConfig("test", "test-key", "Test");
             var apiClient = new Marketplace.ApiClient(config);
             apiClient.SimulationEnabled = true;
             feedApi = new Marketplace.V2.Api.FeedEndpoint(apiClient);

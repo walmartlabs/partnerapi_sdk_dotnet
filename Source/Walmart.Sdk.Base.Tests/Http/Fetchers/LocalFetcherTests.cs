@@ -31,7 +31,7 @@ namespace Walmart.Sdk.Base.Test.Http
         public Primitive.Config.IHttpConfig config;
         public LocalFetcherTests()
         {
-            config = new Primitive.BaseConfig("test", "test-key");
+            config = new Primitive.BaseConfig("test", "test-key", "Test");
         }
 
         [Fact]

@@ -29,7 +29,7 @@ namespace Walmart.Sdk.Marketplace.IntegrationTests.V3
 
         public OrderEndpointTests()
         {
-            var config = new Marketplace.ClientConfig("test", "test-key");
+            var config = new Marketplace.ClientConfig("test", "test-key", "test");
             var apiClient = new Marketplace.ApiClient(config);
             apiClient.SimulationEnabled = true;
             orderApi = new Marketplace.V3.Api.OrderEndpoint(apiClient);

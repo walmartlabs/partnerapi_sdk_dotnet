@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="credentials.json" />
     <None Remove="settings.json" />
     <None Remove="V2\requestStub\inventoryBulkUpdate.xml" />
     <None Remove="V2\requestStub\inventoryUpdate.xml" />
@@ -29,6 +30,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="credentials.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="settings.json" />
     <EmbeddedResource Include="V2\requestStub\inventoryBulkUpdate.xml" />
     <EmbeddedResource Include="V2\requestStub\inventoryUpdate.xml" />

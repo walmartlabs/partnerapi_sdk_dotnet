@@ -28,7 +28,7 @@ namespace Walmart.Sdk.Marketplace.IntegrationTests.V3
 
         public PromotionEndpointTests()
         {
-            var config = new ClientConfig("test", "test-key");
+            var config = new ClientConfig("test", "test-key", "Test");
             var apiClient = new ApiClient(config);
             apiClient.SimulationEnabled = true;
             promotionApi = new PromotionEndpoint(apiClient);

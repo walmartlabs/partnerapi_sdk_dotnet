@@ -22,7 +22,7 @@ namespace Walmart.Sdk.Marketplace
 {
     public class ClientConfig: Base.Primitive.BaseConfig
     {
-        public ClientConfig(string consumerId, string privateKey) : base(consumerId, privateKey)
+        public ClientConfig(string clientId, string clientSecret, string accessToken) : base(clientId, clientSecret, accessToken)
         { }
         
         override public string ServiceName { get; set; } = "Walmart Marketplace";

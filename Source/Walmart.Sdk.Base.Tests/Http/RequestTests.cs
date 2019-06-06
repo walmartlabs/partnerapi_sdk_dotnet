@@ -30,8 +30,8 @@ namespace Walmart.Sdk.Base.Test.Http
 
         private readonly string[] walmartHeaders =
         {
-            "WM_SEC.AUTH_SIGNATURE", "WM_SEC.TIMESTAMP", "WM_CONSUMER.CHANNEL.TYPE",
-            "WM_CONSUMER.ID", "WM_SVC.NAME", "WM_QOS.CORRELATION_ID"
+            "WM_SEC.ACCESS_TOKEN", "WM_SEC.TIMESTAMP", "WM_CONSUMER.CHANNEL.TYPE",
+            "Authorization", "WM_SVC.NAME", "WM_QOS.CORRELATION_ID"
         };
 
         [Fact]
@@ -40,7 +40,7 @@ namespace Walmart.Sdk.Base.Test.Http
             var config = new Mock<Base.Primitive.Config.IRequestConfig>();
             config.Setup(t => t.UserAgent).Returns("test user-agent");
             config.Setup(t => t.BaseUrl).Returns("http://www.test.com");
-            config.Setup(t => t.Credentials).Returns(new Credentials("test", PRIVATE_KEY_EXAMPLE));
+            config.Setup(t => t.Credentials).Returns(new Credentials("test", PRIVATE_KEY_EXAMPLE, "test"));
             var request = new Base.Http.Request(config.Object);
             request.FinalizePreparation();
 
@@ -51,19 +51,6 @@ namespace Walmart.Sdk.Base.Test.Http
                 Assert.True(request.HttpRequest.Headers.TryGetValues(name, out values));
                 Assert.NotEmpty(values);
             }
-        }
-
-        [Fact]
-        public void InvalidCredentialsResultsInException()
-        {
-            var config = new Mock<Base.Primitive.Config.IRequestConfig>();
-            config.Setup(t => t.UserAgent).Returns("test user-agent");
-            config.Setup(t => t.BaseUrl).Returns("http://www.test.com");
-            config.Setup(t => t.Credentials).Returns(new Credentials("test", "invalid-key"));
-            var request = new Base.Http.Request(config.Object);
-
-            Assert.Throws<Base.Exception.SignatureException>(
-                () => request.FinalizePreparation());
         }
     }
 }

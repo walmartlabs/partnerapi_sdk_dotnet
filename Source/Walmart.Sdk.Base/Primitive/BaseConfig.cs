@@ -40,14 +40,14 @@ namespace Walmart.Sdk.Base.Primitive
         }
         public int RequestTimeoutMs { get; set; } = 100000; // in milliseconds
 
-        public BaseConfig(string consumerId, string privateKey)
+        public BaseConfig(string clientId, string clientSecret, string accessToken)
         {
             // generate sdk name from an assembly information
             var assembly = this.GetType().GetTypeInfo().Assembly;
-            UserAgent = string.Format(".Net_{0}_v{1}_{2}", assembly.GetName().Name, assembly.GetName().Version.ToString(), consumerId);
+            UserAgent = string.Format(".Net_{0}_v{1}_{2}", assembly.GetName().Name, assembly.GetName().Version.ToString(), clientId);
 
             // storing user credentials
-            Credentials = new Credentials(consumerId, privateKey);
+            Credentials = new Credentials(clientId, clientSecret, accessToken);
         }
 
         public IRequestConfig GetRequestConfig() => this;
@@ -63,13 +63,15 @@ namespace Walmart.Sdk.Base.Primitive
     // Merchant Credentials
     public class Credentials
     {
-        public string PrivateKey { get; private set; }
-        public string ConsumerId { get; private set; }
+        public string ClientId { get; private set; }
+        public string ClientSecret { get; private set; }
+        public string AccessToken { get; private set; }
 
-        public Credentials(string id, string key)
+        public Credentials(string clientId, string clientSecret, string accessToken)
         {
-            PrivateKey = key;
-            ConsumerId = id;
+            ClientId = clientId;
+            ClientSecret = clientSecret;
+            AccessToken = accessToken;
         }
     }
 }
