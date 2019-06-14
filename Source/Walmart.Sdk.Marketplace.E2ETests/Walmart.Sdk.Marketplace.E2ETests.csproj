@@ -30,9 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="credentials.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <EmbeddedResource Include="credentials.json" />
     <EmbeddedResource Include="settings.json" />
     <EmbeddedResource Include="V2\requestStub\inventoryBulkUpdate.xml" />
     <EmbeddedResource Include="V2\requestStub\inventoryUpdate.xml" />

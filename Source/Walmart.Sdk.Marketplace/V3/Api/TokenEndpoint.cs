@@ -16,6 +16,7 @@ limitations under the License.
 
 namespace Walmart.Sdk.Marketplace.V3.Api
 {
+    using System.Net.Http;
     using System.Threading.Tasks;
     using Walmart.Sdk.Base.Primitive;
     using Walmart.Sdk.Marketplace.V3.Payload.Token;
@@ -27,7 +28,7 @@ namespace Walmart.Sdk.Marketplace.V3.Api
             payloadFactory = new V3.Payload.PayloadFactory();
         }
 
-        public async Task<TokenType> GetToken()
+        public async Task<TokenFeedResponse> GetToken()
         {
             // to avoid deadlock if this method is executed synchronously
             await new ContextRemover();
@@ -36,10 +37,10 @@ namespace Walmart.Sdk.Marketplace.V3.Api
 
             request.EndpointUri = "/v3/token";
 
-            request.QueryParams.Add("grant_type", "client_credentials");
-
-            var response = await client.GetAsync(request);
-            var result = await ProcessResponse<TokenType>(response);
+            request.HttpRequest.Content = new StringContent("grant_type=client_credentials");
+            request.HttpRequest.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/x-www-form-urlencoded");
+            var response = await client.PostAsync(request);
+            var result = await ProcessResponse<TokenFeedResponse>(response);
             return result;
         }
 

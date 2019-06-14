@@ -61,6 +61,7 @@ namespace Walmart.Sdk.Base.Http
         public void AddPayload(string payload)
         {
             HttpRequest.Content = new StringContent((string)payload, Encoding.UTF8, GetContentType());
+            HttpRequest.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/x-www-form-urlencoded");
         }
 
         public string BuildQueryParams()
@@ -83,6 +84,7 @@ namespace Walmart.Sdk.Base.Http
         {
             HttpRequest.Headers.Add("User-Agent", config.UserAgent.Replace(" ", "_"));
             HttpRequest.RequestUri = new Uri(config.BaseUrl + EndpointUri + BuildQueryParams());
+
             // call to genereate walmart headers should be done when RequestUri already defined
             // we need it's value to generate signature header
             AddWalmartHeaders();
@@ -93,7 +95,10 @@ namespace Walmart.Sdk.Base.Http
             string timestamp = Util.DigitalSignature.GetCurrentTimestamp();
 
             var creds = config.Credentials;
-            HttpRequest.Headers.Add("WM_SEC.ACCESS_TOKEN", creds.AccessToken);
+
+            if(!String.IsNullOrEmpty(creds.AccessToken))
+                HttpRequest.Headers.Add("WM_SEC.ACCESS_TOKEN", creds.AccessToken);
+
             HttpRequest.Headers.Add("WM_SEC.TIMESTAMP", timestamp);
             HttpRequest.Headers.Add("WM_CONSUMER.CHANNEL.TYPE", config.ChannelType);
 
@@ -102,7 +107,7 @@ namespace Walmart.Sdk.Base.Http
             HttpRequest.Headers.Add("Authorization", "Basic " + base64String);
             HttpRequest.Headers.Add("WM_SVC.NAME", config.ServiceName);
             HttpRequest.Headers.Add("WM_QOS.CORRELATION_ID", DigitalSignature.GetCorrelationId());
-
+            
             HttpRequest.Headers.Add("Accept", GetContentType());
         }
 

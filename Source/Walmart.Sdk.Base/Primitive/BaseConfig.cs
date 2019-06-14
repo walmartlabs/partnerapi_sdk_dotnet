@@ -65,7 +65,7 @@ namespace Walmart.Sdk.Base.Primitive
     {
         public string ClientId { get; private set; }
         public string ClientSecret { get; private set; }
-        public string AccessToken { get; private set; }
+        public string AccessToken { get; set; }
 
         public Credentials(string clientId, string clientSecret, string accessToken)
         {
